@@ -8,22 +8,41 @@ import { Users } from './user-auth/users';
 })
 
 export class ApiService {
+  redirectUrl!: string;
   baseURL: string = 'http://localhost/cmkis/';
+
+  @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
+
   constructor(private httpClient : HttpClient) { }
 
 
   public userlogin(email:any,pass:any) {
     return this.httpClient.post<any>(this.baseURL + '/login.php', {email,pass})
     .pipe(map(Users=>{
-      console.log(Users.email)
       this.setToken(Users.email);
-      // this.getLoggedInName.emit(true);
+      this.getLoggedInName.emit(true);
       return Users;
     }));
   }
 
   setToken(token: string){
     localStorage.setItem('token',token)
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+  deleteToken(){
+    localStorage.removeItem('token');
+  }
+
+  isLoggedIn(){
+    const usertoken = this.getToken();
+    if (usertoken != null){
+      return true
+    }
+      return false;
   }
 
 }
