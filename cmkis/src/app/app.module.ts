@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from "./shared/shared.module";
 
 
 
@@ -24,7 +25,8 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HomeModule
+    HomeModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
