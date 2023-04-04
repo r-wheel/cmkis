@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         console.log(data);
         if(data.message=='success')
         //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['./home/dashboard']);
       },
       error => {
         alert("User name or password is incorrect")

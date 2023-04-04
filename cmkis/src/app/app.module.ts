@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeModule } from './home/home.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UserAuthModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
