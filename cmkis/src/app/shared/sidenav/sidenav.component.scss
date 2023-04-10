@@ -1,67 +1,11 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 // *{
 //   margin: 0;
 //   padding: 0;
-//   font-size: clamp(0.5em, 1em, 1.5em);
+//   box-sizing: border-box;
+//   font-family: "Poppins" , sans-serif;
 // }
-
-// .container{
-//   display: flex;
-//   flex-direction: column !important;
-//   justify-content: space-around;
-//   height: 100vh;
-
-//   .logo{
-//     height: 150px;
-//     aspect-ratio: 3/2;
-//     object-fit: contain;
-//   }
-
-//   .btn-category{
-//     font-size: 0.8em;
-//     color: grey;
-//     margin-left: 1.3em;
-//     margin-bottom: 1em;
-//     margin-top: 1em;
-//   }
-
-//   button{
-//     text-align: left;
-//     padding-left: 2em;
-//     padding-top: 1em;
-//     padding-bottom: 1em;
-//     background-color: #fff;
-//     border: 0px;
-//     font-weight: bold;
-//     cursor: pointer;
-
-//     &:hover{
-//       background-color: #eaeaea;
-//     }
-
-//     .active{
-//       border: 1px solid grey;
-//     }
-//   }
-
-//   .navigation{
-//     display: flex;
-//     flex-direction: column !important;
-//   }
-//   .other-navigation{
-//     display: flex;
-//     flex-direction: column !important;
-//   }
-
-// }
-
-/* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-}
 .sidebar{
   position: fixed;
   left: 0;
@@ -69,12 +13,12 @@
   height: 100%;
   width: 78px;
   background: #11101D;
-  padding: 16px 24px;
+  padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
 }
 .sidebar.open{
-  width: 385px;
+  width: 270px;
 }
 .sidebar .logo-details{
   height: 60px;
@@ -88,7 +32,7 @@
 }
 .sidebar .logo-details .logo_name{
   color: #fff;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 600;
   opacity: 0;
   transition: all 0.5s ease;
@@ -116,7 +60,7 @@
   color: #fff;
   height: 60px;
   min-width: 50px;
-  font-size:28px;
+  font-size: 28px;
   text-align: center;
   line-height: 60px;
 }
@@ -223,7 +167,7 @@
 .sidebar li i{
   height: 50px;
   line-height: 50px;
-  font-size: 25px;
+  font-size: 18px;
   border-radius: 12px;
 }
 .sidebar li.profile{
@@ -238,7 +182,7 @@
   overflow: hidden;
 }
 .sidebar.open li.profile{
-  width: 385px;
+  width: 270px;
 }
 .sidebar li .profile-details{
   display: flex;
@@ -254,13 +198,13 @@
 }
 .sidebar li.profile .name,
 .sidebar li.profile .job{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   color: #fff;
   white-space: nowrap;
 }
 .sidebar li.profile .job{
-  font-size: 14px;
+  font-size: 12px;
 }
 .sidebar .profile #log_out{
   position: absolute;
@@ -304,4 +248,3 @@
     display: none;
   }
 }
-
