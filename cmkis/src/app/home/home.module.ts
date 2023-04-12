@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
+import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SharedModule } from "../shared/shared.module";
         KeyInventoryComponent,
         RoomKeyManagementComponent,
         SemesterManagementComponent,
-        SettingsComponent
+        SettingsComponent,
+        FacultyProfileComponent
     ],
     exports: [
         DashboardComponent

@@ -14,6 +14,7 @@ import { KeyInventoryComponent } from './home/key-inventory/key-inventory.compon
 import { RoomKeyManagementComponent } from './home/room-key-management/room-key-management.component';
 import { SemesterManagementComponent } from './home/semester-management/semester-management.component';
 import { SettingsComponent } from './home/settings/settings.component';
+import { FacultyProfileComponent } from './home/faculty-profile/faculty-profile.component';
 
 
 const routes: Routes = [
@@ -27,10 +28,12 @@ const routes: Routes = [
       {path: 'attendance-checker', component: AttendanceCheckerComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'faculty', component: FacultyComponent},
+      {path: 'profile', component: FacultyProfileComponent },
       {path: 'key-inventory', component: KeyInventoryComponent},
       {path: 'room-key-management', component: RoomKeyManagementComponent},
       {path: 'semester-management', component: SemesterManagementComponent},
       {path: 'settings', component: SettingsComponent},
+
     ]
   },
 
@@ -40,4 +43,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
