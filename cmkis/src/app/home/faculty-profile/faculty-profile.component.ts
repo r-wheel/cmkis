@@ -16,6 +16,12 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   private sub: Subscription;
   user: Users = null;
 
+  public displayColumn: string [] = ['id', 'fname', 'lname', 'email', 'pass'];
+  public dataSource: any = [];
+
+  allFaculty: any = [];
+  allFacultySubscribe: any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private api: ApiService,
@@ -29,10 +35,21 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
       ).subscribe()
     });
 
+
+    this.getAllFaculty();
+
   }
 
   ngOnDestroy(){
     this.sub.unsubscribe();
+  }
+
+  getAllFaculty(){
+    this.allFacultySubscribe = this.api.loadAllFaculty().subscribe(data =>{
+      this.allFaculty = data;
+      console.table(data);
+      this.dataSource = data;
+    })
   }
 
 }

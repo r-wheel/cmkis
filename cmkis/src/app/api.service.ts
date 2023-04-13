@@ -17,7 +17,11 @@ export class ApiService {
   constructor(private httpClient : HttpClient) { }
 
 
-  
+  loadAllFaculty(){
+    return this.httpClient.get(this.baseURL + 'api2.php').pipe(map(data => data));
+  }
+
+
   findOne(id: number): Observable<Users> {
     return this.httpClient.get<any>(this.baseURL + 'api.php?id='+ id).pipe(
       map((user:Users) => user)

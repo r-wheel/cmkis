@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
@@ -50,7 +52,9 @@ import { FacultyProfileComponent } from './faculty-profile/faculty-profile.compo
         MatFormFieldModule,
         MatSelectModule,
         RouterModule,
-        SharedModule
+        SharedModule,
+        MatTabsModule,
+        MatTableModule
     ]
 })
 export class HomeModule { }
