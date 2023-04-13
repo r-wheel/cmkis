@@ -28,7 +28,7 @@ const routes: Routes = [
       {path: 'attendance-checker', component: AttendanceCheckerComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'faculty', component: FacultyComponent},
-      {path: 'profile', component: FacultyProfileComponent },
+      {path: 'faculty/:id', component: FacultyProfileComponent },
       {path: 'key-inventory', component: KeyInventoryComponent},
       {path: 'room-key-management', component: RoomKeyManagementComponent},
       {path: 'semester-management', component: SemesterManagementComponent},

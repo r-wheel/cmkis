@@ -1,7 +1,8 @@
 import { Injectable, Output, EventEmitter, } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams} from '@angular/common/http';
 import { Users } from './user-auth/users';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class ApiService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
   constructor(private httpClient : HttpClient) { }
+
+
+  
+  findOne(id: number): Observable<Users> {
+    return this.httpClient.get<any>(this.baseURL + 'api.php?id='+ id).pipe(
+      map((user:Users) => user)
+    )
+  }
 
 
   public userlogin(email:any,pass:any) {

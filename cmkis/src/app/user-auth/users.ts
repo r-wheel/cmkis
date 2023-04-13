@@ -1,10 +1,10 @@
 export class Users {
 
-  public id: number;
-  public fname: string;
-  public lname: string;
-  public email: string;
-  public pass: string;
+  public id?: number;
+  public fname?: string;
+  public lname?: string;
+  public email?: string;
+  public pass?: string;
 
   constructor (
     id: number,
