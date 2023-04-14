@@ -40,7 +40,8 @@ import { FacultyProfileComponent } from './faculty-profile/faculty-profile.compo
         FacultyProfileComponent
     ],
     exports: [
-        DashboardComponent
+        DashboardComponent,
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [HomeComponent],

@@ -1,18 +1,17 @@
 <style>
-  h1 {text-align: center;}
+  h1,h3 {text-align: center;}
   p {text-align: center;}
   div {text-align: center;}
   table {width: 100%;}
   th.mat-sort-header-sorted {color: black;}
+
 </style>
 
 
 <h1 *ngIf="user">
   {{user.fname}} {{user.lname}}
-  <p>{{user.email}}</p>
+  <h4>{{user.email}}</h4>
 </h1>
-
-<p>edit</p>
 
 <hr>
 
@@ -21,6 +20,7 @@
 <mat-tab-group fitInkBarToContent mat-align-tabs="center" animationDuration="0ms">
 
   <mat-tab label="1st Sem">
+
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
 
@@ -56,11 +56,13 @@
     </table>
 
 
+    <button mat-raised-button color="primary">Primary</button>
+
   </mat-tab>
 
 
   <mat-tab label="2nd Sem">
-    2nd Sem Schecule
+    <button mat-raised-button color="primary">Primary</button>
   </mat-tab>
 </mat-tab-group>
 
