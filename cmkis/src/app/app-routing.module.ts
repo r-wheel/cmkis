@@ -20,13 +20,15 @@ import { SettingsComponent } from './home/settings/settings.component';
 import { FacultyProfileComponent } from './home/faculty-profile/faculty-profile.component';
 
 
+import { HomeATComponent } from './home-at/home-at.component';
+import { HomeFacultyComponent } from './home-faculty/home-faculty.component';
+
+
 const routes: Routes = [
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'cmkis', component: CmkisComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'login-faculty', component: LoginFacultyComponent },
-  { path: 'login-attendance-checker', component: LoginAtndcChkrComponent },
   // { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
   { path: 'home', component: HomeComponent,
     children: [
@@ -39,9 +41,18 @@ const routes: Routes = [
       {path: 'room-key-management', component: RoomKeyManagementComponent},
       {path: 'semester-management', component: SemesterManagementComponent},
       {path: 'settings', component: SettingsComponent},
-
     ]
   },
+
+
+  { path: 'login-attendance-checker', component: LoginAtndcChkrComponent },
+  { path: 'home-attendance-checker', component: HomeATComponent },
+
+
+
+  { path: 'login-faculty', component: LoginFacultyComponent },
+  { path: 'home-faculty', component: HomeFacultyComponent },
+
 
 ];
 

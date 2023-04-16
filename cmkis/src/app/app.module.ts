@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from "./shared/shared.module";
 import { CmkisComponent } from './cmkis/cmkis.component';
+import { HomeAtModule } from './home-at/home-at.module';
+import { HomeFacultyModule } from './home-faculty/home-faculty.module';
 
 
 
@@ -17,7 +19,6 @@ import { CmkisComponent } from './cmkis/cmkis.component';
   declarations: [
     AppComponent,
     CmkisComponent,
-
 
   ],
   imports: [
@@ -29,7 +30,9 @@ import { CmkisComponent } from './cmkis/cmkis.component';
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    HomeAtModule,
+    HomeFacultyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

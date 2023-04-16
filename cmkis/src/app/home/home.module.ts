@@ -12,6 +12,8 @@ import { RoomKeyManagementComponent } from './room-key-management/room-key-manag
 import { SemesterManagementComponent } from './semester-management/semester-management.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,7 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
-import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
+
 
 
 @NgModule({
