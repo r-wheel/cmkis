@@ -9,12 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from "./shared/shared.module";
+import { CmkisComponent } from './cmkis/cmkis.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CmkisComponent,
+
 
   ],
   imports: [

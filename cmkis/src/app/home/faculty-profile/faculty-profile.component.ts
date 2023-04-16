@@ -17,6 +17,7 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   user: Users = null;
 
   public displayColumn: string [] = ['id', 'fname', 'lname', 'email', 'pass'];
+  public displayColumnAttendance: string [] = ['id', 'fname', 'lname'];
   public dataSource: any = [];
 
   allFaculty: any = [];
@@ -43,6 +44,9 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.sub.unsubscribe();
   }
+
+
+
 
   getAllFaculty(){
     this.allFacultySubscribe = this.api.loadAllFaculty().subscribe(data =>{

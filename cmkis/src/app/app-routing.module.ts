@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './user-auth/login/login.component';
+import { LoginFacultyComponent } from './user-auth/login-faculty/login-faculty.component';
+import { LoginAtndcChkrComponent } from './user-auth/login-atndc-chkr/login-atndc-chkr.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './user-auth/auth.guard';
 
 
+import { CmkisComponent } from './cmkis/cmkis.component';
 import { AccountComponent } from './home/account/account.component';
 import { AttendanceCheckerComponent } from './home/attendance-checker/attendance-checker.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
@@ -20,7 +23,10 @@ import { FacultyProfileComponent } from './home/faculty-profile/faculty-profile.
 const routes: Routes = [
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'cmkis', component: CmkisComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login-faculty', component: LoginFacultyComponent },
+  { path: 'login-attendance-checker', component: LoginAtndcChkrComponent },
   // { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
   { path: 'home', component: HomeComponent,
     children: [
