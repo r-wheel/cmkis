@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent{
+  name = 'Angular ' + VERSION.major;
 
   constructor() { }
 
   ngOnInit(): void {
+    let sidebar = document.querySelector('.sidebar');
+    let closeBtn = document.querySelector('#btn');
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+      if (sidebar.classList.contains('open')) {
+        closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
+      } else {
+        closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
+      }
+    }
   }
 
 }
