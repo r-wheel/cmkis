@@ -1,0 +1,105 @@
+<style>
+  h1,h3 {text-align: center;}
+  p {text-align: center;}
+  div {text-align: center;}
+  table {width: 100%;}
+  th.mat-sort-header-sorted {color: black;}
+
+</style>
+
+
+<!-- USER INFO HERE -->
+<h1 *ngIf="user">
+  {{user.fname}} {{user.lname}}
+  <h4>{{user.email}}</h4>
+</h1>
+<!-- USER INFO END -->
+
+<hr>
+
+<h1> Schedule</h1>
+
+<!-- TABS HERE -->
+<mat-tab-group fitInkBarToContent mat-align-tabs="center" animationDuration="0ms">
+
+  <!-- 1ST TAB HERE -->
+  <mat-tab label="1st Sem">
+
+    <!-- SCHEDULE TABLE HERE -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fname">
+        <th mat-header-cell *matHeaderCellDef> Subject </th>
+        <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lname">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>.
+
+      <ng-container matColumnDef="pass">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let element"> {{element.pass}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+    </table>
+    <!-- SCHEDULE TABLE END -->
+
+    <button mat-raised-button color="primary">Add Schedule</button>
+
+
+  </mat-tab>
+  <!-- 1ST TAB END -->
+
+
+
+  <!-- 2ND TAB HERE -->
+  <mat-tab label="2nd Sem">
+    <h1>2nd sem schedule</h1>
+  </mat-tab>
+  <!-- 2ND TAB END -->
+
+
+</mat-tab-group>
+<!-- TABS END -->
+
+<hr>
+
+<h1>Attendance Record</h1>
+
+<!-- ATTENDANCE RECORD TABLE HERE -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fname">
+    <th mat-header-cell *matHeaderCellDef> Room </th>
+    <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lname">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayColumnAttendance"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumnAttendance;"></tr>
+</table>
+<!-- ATTENDANCE RECORD TABLE END -->

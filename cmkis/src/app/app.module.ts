@@ -9,12 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from "./shared/shared.module";
+import { CmkisComponent } from './cmkis/cmkis.component';
+import { HomeAtModule } from './home-at/home-at.module';
+import { HomeFacultyModule } from './home-faculty/home-faculty.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CmkisComponent,
 
   ],
   imports: [
@@ -26,7 +30,9 @@ import { SharedModule } from "./shared/shared.module";
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    HomeAtModule,
+    HomeFacultyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
