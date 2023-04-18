@@ -26,7 +26,7 @@ import { HomeFacultyComponent } from './home-faculty/home-faculty.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'cmkis', pathMatch: 'full' },
   { path: 'cmkis', component: CmkisComponent },
   { path: 'login', component: LoginComponent },
   // { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
