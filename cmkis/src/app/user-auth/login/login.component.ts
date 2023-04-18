@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
       this.angForm = this.fb.group({
-        email: ['',[Validators.required,Validators.minLength(1),Validators.email]],
+        username: ['',[Validators.required,Validators.minLength(1),Validators.email]],
         password: ['', Validators.required]
       })
   }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   postdata(angForm:any){
-    this.dataService.userlogin(angForm.value.email,angForm.value.password)
+    this.dataService.adminLogin(angForm.value.username,angForm.value.password)
     .pipe(first())
     .subscribe(
       data=>{

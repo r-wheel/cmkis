@@ -17,22 +17,47 @@ export class ApiService {
   constructor(private httpClient : HttpClient) { }
 
 
+  // GET ALL FACULTY HERE
   loadAllFaculty(){
     return this.httpClient.get(this.baseURL + 'api2.php').pipe(map(data => data));
   }
+  // GET ALL FACULTY END
 
 
+
+  // GET FACULTY BY ID HERE
   findOne(id: number): Observable<Users> {
     return this.httpClient.get<any>(this.baseURL + 'api.php?id='+ id).pipe(
       map((user:Users) => user)
     )
   }
+  // GET FACULTY BY ID END
 
 
-  public userlogin(email:any,pass:any) {
-    return this.httpClient.post<any>(this.baseURL + '/login.php', {email,pass})
+
+  // LOGIN HERE
+  public adminLogin(username:any,pass:any) {
+    return this.httpClient.post<any>(this.baseURL + '/loginAdmin.php', {username,pass})
     .pipe(map(Users=>{
-      this.setToken(Users.email);
+      this.setToken(Users.username);
+      this.getLoggedInName.emit(true);
+      return Users;
+    }));
+  }
+
+  public facultyLogin(username:any,pass:any) {
+    return this.httpClient.post<any>(this.baseURL + '/loginFaculty.php', {username,pass})
+    .pipe(map(Users=>{
+      this.setToken(Users.username);
+      this.getLoggedInName.emit(true);
+      return Users;
+    }));
+  }
+
+  public attendanceCheckerLogin(username:any,pass:any) {
+    return this.httpClient.post<any>(this.baseURL + '/loginAttendanceChecker.php', {username,pass})
+    .pipe(map(Users=>{
+      this.setToken(Users.username);
       this.getLoggedInName.emit(true);
       return Users;
     }));
@@ -57,5 +82,5 @@ export class ApiService {
     }
       return false;
   }
-
+  // LOGIN END
 }
