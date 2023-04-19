@@ -22,15 +22,20 @@ import { FacultyProfileComponent } from './home/faculty-profile/faculty-profile.
 
 import { HomeATComponent } from './home-at/home-at.component';
 import { HomeFacultyComponent } from './home-faculty/home-faculty.component';
+import { RoleGuard } from './user-auth/role.guard';
 
 
 const routes: Routes = [
 
   { path: '', redirectTo: 'cmkis', pathMatch: 'full' },
   { path: 'cmkis', component: CmkisComponent },
+
   { path: 'login', component: LoginComponent },
-  // { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
   { path: 'home', component: HomeComponent,
+      canActivate: [AuthGuard, RoleGuard],
+      data: {
+        expectedRole: 'Admin'
+      },
     children: [
       {path: 'account', component: AccountComponent},
       {path: 'attendance-checker', component: AttendanceCheckerComponent},
@@ -42,14 +47,11 @@ const routes: Routes = [
       {path: 'semester-management', component: SemesterManagementComponent},
       {path: 'settings', component: SettingsComponent},
     ],
-    canActivate: [AuthGuard]
-  },
 
+  },
 
   { path: 'login-attendance-checker', component: LoginAtndcChkrComponent },
   { path: 'home-attendance-checker', component: HomeATComponent },
-
-
 
   { path: 'login-faculty', component: LoginFacultyComponent },
   { path: 'home-faculty', component: HomeFacultyComponent },

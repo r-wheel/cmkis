@@ -45,6 +45,13 @@ export class ApiService {
     }));
   }
 
+  public adminRole() {
+    return this.httpClient.get<any>(this.baseURL + '/loginAdmin.php')
+    .pipe(map(Users=>{
+      return Users;
+    }));
+  }
+
   public facultyLogin(username:any,pass:any) {
     return this.httpClient.post<any>(this.baseURL + '/loginFaculty.php', {username,pass})
     .pipe(map(Users=>{

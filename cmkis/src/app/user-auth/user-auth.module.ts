@@ -6,6 +6,7 @@ import { LoginFacultyComponent } from './login-faculty/login-faculty.component';
 import { LoginAtndcChkrComponent } from './login-atndc-chkr/login-atndc-chkr.component';
 
 
+
 @NgModule({
   declarations: [
     LoginComponent,

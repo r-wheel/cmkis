@@ -11,6 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
+
   angForm: FormGroup
 
   constructor(
@@ -28,11 +29,11 @@ export class LoginComponent implements OnInit {
   }
 
   postdata(angForm:any){
-    this.dataService.adminLogin(angForm.value.username,angForm.value.password)
+    this.dataService.adminLogin(angForm.value.username,angForm.value.password,)
     .pipe(first())
     .subscribe(
       data=>{
-        console.log(data);
+        console.log(data.role);
         if(data.message=='success')
         //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
         this.router.navigate(['./home']);
