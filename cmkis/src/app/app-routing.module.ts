@@ -41,7 +41,8 @@ const routes: Routes = [
       {path: 'room-key-management', component: RoomKeyManagementComponent},
       {path: 'semester-management', component: SemesterManagementComponent},
       {path: 'settings', component: SettingsComponent},
-    ]
+    ],
+    canActivate: [AuthGuard]
   },
 
 
