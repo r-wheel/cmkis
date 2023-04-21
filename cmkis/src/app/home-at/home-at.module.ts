@@ -3,16 +3,20 @@ import { CommonModule } from '@angular/common';
 import { HomeATComponent } from './home-at.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { CheckAttendanceComponent } from './check-attendance/check-attendance.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [
-    HomeATComponent
+    HomeATComponent,
+    CheckAttendanceComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatTabsModule,
   ]
 })
 export class HomeAtModule { }

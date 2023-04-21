@@ -5,12 +5,16 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from '../app-routing.module';
+import { SidenavAtComponent } from './sidenav-at/sidenav-at.component';
+import { SidenavFacultyComponent } from './sidenav-faculty/sidenav-faculty.component';
 
 
 
 @NgModule({
   declarations: [
-    SidenavComponent
+    SidenavComponent,
+    SidenavAtComponent,
+    SidenavFacultyComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,10 @@ import { AppRoutingModule } from '../app-routing.module';
     MatIconModule,
   ],
   exports: [
-    SidenavComponent
+    SidenavComponent,
+    SidenavAtComponent,
+    SidenavFacultyComponent
+
   ]
 })
 export class SharedModule { }

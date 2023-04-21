@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HomeFacultyComponent } from './home-faculty.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeFacultyComponent
+    HomeFacultyComponent,
+    ViewAttendanceComponent
   ],
   imports: [
     CommonModule,

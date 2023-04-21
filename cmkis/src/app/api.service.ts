@@ -16,6 +16,15 @@ export class ApiService {
 
   constructor(private httpClient : HttpClient) { }
 
+  // GET SEMESTER
+  getSemester(id: number): Observable<Users> {
+    return this.httpClient.get<any>(this.baseURL + 'api.php?id='+ id).pipe(
+      map((user:Users) => user)
+    )
+  }
+  // GET SEMESTER END
+
+
 
   // GET ALL FACULTY HERE
   loadAllFaculty(){
@@ -23,7 +32,7 @@ export class ApiService {
   }
   // GET ALL FACULTY END
 
-
+  
 
   // GET FACULTY BY ID HERE
   findOne(id: number): Observable<Users> {

@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.auth = localStorage.getItem('token');
-    if (this.auth !== "Admin") {
-      window.alert("You are not authorized to this page. You will be redirected to Login Page")
-      this.router.navigate(['/cmkis']);
-    }
+    // this.auth = localStorage.getItem('token');
+    // if (this.auth !== "Admin") {
+    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
+    //   this.router.navigate(['/cmkis']);
+    // }
 
 
   }

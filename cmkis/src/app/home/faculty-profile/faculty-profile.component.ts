@@ -33,11 +33,11 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.auth = localStorage.getItem('token');
-    if (this.auth !== "Admin") {
-      window.alert("You are not authorized to this page. You will be redirected to Login Page")
-      this.router.navigate(['/cmkis']);
-    }
+    // this.auth = localStorage.getItem('token');
+    // if (this.auth !== "Admin") {
+    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
+    //   this.router.navigate(['/cmkis']);
+    // }
 
 
     this.sub = this.activatedRoute.params.subscribe(params => {

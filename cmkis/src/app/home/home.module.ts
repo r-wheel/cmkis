@@ -11,8 +11,10 @@ import { KeyInventoryComponent } from './key-inventory/key-inventory.component';
 import { RoomKeyManagementComponent } from './room-key-management/room-key-management.component';
 import { SemesterManagementComponent } from './semester-management/semester-management.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
+import { FormsModule } from '@angular/forms';
 
 
 import { MatButtonModule } from '@angular/material/button';
@@ -57,7 +59,9 @@ import { SharedModule } from "../shared/shared.module";
         RouterModule,
         SharedModule,
         MatTabsModule,
-        MatTableModule
+        MatTableModule,
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class HomeModule { }
