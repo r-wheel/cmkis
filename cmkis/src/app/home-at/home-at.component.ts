@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-at',
@@ -7,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeATComponent implements OnInit {
 
-  title = 'CICT Class Monitoring and Key Inventory Management System';
+  auth:any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.auth = localStorage.getItem('token');
+    if (this.auth !== "AttendanceChecker") {
+      window.alert("You are not authorized to this page. You will be redirected to Login Page")
+      this.router.navigate(['/cmkis']);
+    }
   }
 
 }

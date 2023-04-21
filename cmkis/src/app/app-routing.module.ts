@@ -32,10 +32,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent,
-      canActivate: [AuthGuard, RoleGuard],
-      data: {
-        expectedRole: 'Admin'
-      },
+    canActivate: [AuthGuard],
     children: [
       {path: 'account', component: AccountComponent},
       {path: 'attendance-checker', component: AttendanceCheckerComponent},

@@ -34,20 +34,12 @@ export class ApiService {
   // GET FACULTY BY ID END
 
 
-
   // LOGIN HERE
   public adminLogin(username:any,pass:any) {
     return this.httpClient.post<any>(this.baseURL + '/loginAdmin.php', {username,pass})
     .pipe(map(Users=>{
-      this.setToken(Users.username);
+      this.setToken(Users.role);
       this.getLoggedInName.emit(true);
-      return Users;
-    }));
-  }
-
-  public adminRole() {
-    return this.httpClient.get<any>(this.baseURL + '/loginAdmin.php')
-    .pipe(map(Users=>{
       return Users;
     }));
   }
@@ -55,7 +47,7 @@ export class ApiService {
   public facultyLogin(username:any,pass:any) {
     return this.httpClient.post<any>(this.baseURL + '/loginFaculty.php', {username,pass})
     .pipe(map(Users=>{
-      this.setToken(Users.username);
+      this.setToken(Users.role);
       this.getLoggedInName.emit(true);
       return Users;
     }));
@@ -64,7 +56,7 @@ export class ApiService {
   public attendanceCheckerLogin(username:any,pass:any) {
     return this.httpClient.post<any>(this.baseURL + '/loginAttendanceChecker.php', {username,pass})
     .pipe(map(Users=>{
-      this.setToken(Users.username);
+      this.setToken(Users.role);
       this.getLoggedInName.emit(true);
       return Users;
     }));

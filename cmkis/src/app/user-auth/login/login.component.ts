@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   postdata(angForm:any){
     this.dataService.adminLogin(angForm.value.username,angForm.value.password,)
     .pipe(first())
