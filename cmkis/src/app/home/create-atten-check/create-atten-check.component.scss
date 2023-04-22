@@ -1,0 +1,52 @@
+content{
+  padding-top: 5.5em;
+
+}
+.row {
+  display: flex;
+  gap: 2.15em;
+
+
+
+ mat-form-field {
+    width: 100%;
+ }
+}
+
+.select {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  display: flex;
+  gap: 2.15em;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  
+}
+
+.password {
+  width: 100%;
+}
+
+.errormessage{
+  color: red;
+}
+
+.action{
+  display: flex;
+  justify-content: right;
+  
+}
+.email{
+width: 100%;
+padding-top: 0.75em;
+padding-bottom:0.15em;
+}
+
+.gender {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}

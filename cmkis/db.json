@@ -1,0 +1,107 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "faculty": [
+    {
+      "firstname": "josh",
+      "middlename": "christian",
+      "lastname": "cruz",
+      "birthday": "2023-04-17T16:00:00.000Z",
+      "gender": "male",
+      "email": "Josh@gmail.com",
+      "contact": "09321454112",
+      "password": "trix123",
+      "conpassword": "trix123",
+      "id": 1
+    },
+    {
+      "firstname": "joshua ",
+      "middlename": "garcia",
+      "lastname": "josh",
+      "birthday": "2023-04-04T16:00:00.000Z",
+      "gender": "male",
+      "email": "juan@gmail.com",
+      "contact": "09321451147",
+      "password": "juan123",
+      "conpassword": "juan123",
+      "id": 2
+    },
+    {
+      "firstname": "trixie",
+      "middlename": "aguilar",
+      "lastname": "cruz",
+      "birthday": "2023-04-17T16:00:00.000Z",
+      "gender": "female",
+      "email": "trixfiex@gmail.com",
+      "contact": "09215411236",
+      "password": "trix123",
+      "conpassword": "trix123",
+      "id": 3
+    }
+  ],
+  "attendance": [
+    {
+      "firstname": "luffy",
+      "middlename": "dragon",
+      "lastname": "monkey",
+      "birthday": "2023-04-20T16:00:00.000Z",
+      "gender": "male",
+      "email": "luff123@gmail.com",
+      "contact": "092121214547",
+      "password": "luffy123",
+      "conpassword": "luffy123",
+      "id": 2
+    },
+    {
+      "firstname": "nami",
+      "middlename": "kiss",
+      "lastname": "pwet",
+      "birthday": "2023-04-15T16:00:00.000Z",
+      "gender": "male",
+      "email": "nami@gmail.com",
+      "contact": "093321456214",
+      "password": "nami123",
+      "conpassword": "nami123",
+      "id": 3
+    },
+    {
+      "firstname": "james",
+      "middlename": "mighty",
+      "lastname": "bond",
+      "birthday": "2023-04-24T16:00:00.000Z",
+      "gender": "male",
+      "email": "bond@gmail.com",
+      "contact": "09878741245",
+      "password": "james123",
+      "conpassword": "james123",
+      "id": 4
+    },
+    {
+      "firstname": "roronoa",
+      "middlename": "onigiri",
+      "lastname": "Zoro",
+      "birthday": "2023-04-16T16:00:00.000Z",
+      "gender": "male",
+      "email": "zoro@gmail.com",
+      "contact": "09215412415",
+      "password": "zoro123",
+      "conpassword": "zoro123",
+      "id": 5
+    }
+  ]
+}

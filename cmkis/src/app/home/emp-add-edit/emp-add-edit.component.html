@@ -1,0 +1,103 @@
+
+<div mat-dialog-title>
+  <h1>Register Form</h1>
+</div>
+
+<form [formGroup]="reactiveform" (ngSubmit)="onFormSubmit()">
+
+<div mat-dialog-content class="content">
+
+  
+              <!-- fname/mname/lname -->
+    <div class="row"> 
+
+      <mat-form-field appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput type="text" placeholder="Ex. Juan" formControlName="firstname">
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>Middle Name</mat-label>
+        <input matInput type="text" placeholder="ex.  Charm"formControlName="middlename">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="ex.Dela Cruz"formControlName="lastname">
+      </mat-form-field>
+     
+  </div>
+
+               <!-- birthday/contact -->
+               <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Birthday</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="birthday">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+          
+                <mat-form-field appearance="outline">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput type="numer" placeholder="+63" formControlName="contact">
+                </mat-form-field>
+              </div>
+              
+                                               <!-- gender -->
+                <div>       
+                  <mat-radio-group aria-label="Select an option" formControlName="gender" >
+                    <mat-label>Gender</mat-label>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                                                  <!--email -->
+               <div>           
+                <div class="example-container">
+                  <mat-form-field appearance="outline" class="email" >
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName = "email" required >
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                  </mat-form-field>
+                </div>
+             </div>
+                                              <!-- password -->
+              <div>  
+                  <div class="example-container">
+                    <mat-form-field appearance="outline" class="password">
+                      <mat-label>Enter your password</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    </mat-form-field>
+                    <span *ngIf="f['password'].getError('required') !=null" class="errormessage">Password is required</span>
+                  </div>
+              </div>
+                                           <!-- confim-password -->
+               <div>
+                  <div class="example-container" >
+                    <mat-form-field appearance="outline" class="password" >
+                      <mat-label>Enter your confirmation password</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="conpassword">
+                      <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                        <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    </mat-form-field>
+            
+                    <span *ngIf="f['conpassword'].getError('required') !=null" class="errormessage">Confirm password is required</span>
+                    <span *ngIf="f['conpassword'].getError('Mustmatch') !=null" class="errormessage">Password is mismatch</span>
+          
+                </div>
+             </div>
+
+</div>  
+
+
+<div mat-dialog-action class="action">
+  <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+  <button mat-raised-button color ="primary" class="button" type="submit">{{data ? 'Update':'Save'}}</button>
+</div>
+
+</form>

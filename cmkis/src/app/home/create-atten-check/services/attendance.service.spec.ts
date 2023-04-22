@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CmkisService } from './cmkis.service';
+import { AttendanceService } from './attendance.service';
 
-describe('CmkisService', () => {
-  let service: CmkisService;
+describe('AttendanceService', () => {
+  let service: AttendanceService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CmkisService);
+    service = TestBed.inject(AttendanceService);
   });
 
   it('should be created', () => {

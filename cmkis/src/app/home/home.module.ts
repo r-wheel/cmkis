@@ -21,6 +21,26 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
+// Faculty-import
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
+import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+// Attendance-Checker-import
+import { CreateAttenCheckComponent } from './create-atten-check/create-atten-check.component';
+
+
+
+
 
 
 @NgModule({
@@ -29,11 +49,13 @@ import { SharedModule } from "../shared/shared.module";
         AccountComponent,
         AttendanceCheckerComponent,
         DashboardComponent,
-        FacultyComponent,
         KeyInventoryComponent,
         RoomKeyManagementComponent,
         SemesterManagementComponent,
-        SettingsComponent
+        SettingsComponent,
+        FacultyComponent,
+        EmpAddEditComponent,
+        CreateAttenCheckComponent,
     ],
     exports: [
         DashboardComponent
@@ -48,7 +70,20 @@ import { SharedModule } from "../shared/shared.module";
         MatFormFieldModule,
         MatSelectModule,
         RouterModule,
-        SharedModule
+        SharedModule,
+        MatToolbarModule,
+        MatDialogModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatSnackBarModule
+
     ]
 })
 export class HomeModule { }
