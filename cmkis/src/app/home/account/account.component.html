@@ -1,21 +1,2 @@
 <h1>Account</h1>
 
-<h3>Change Password</h3>
-
-<form (ngSubmit)="changePassword()">
-  <label>
-    Current password:
-    <input type="password" name="currentPassword" [(ngModel)]="currentPassword">
-  </label>
-  <label>
-    New password:
-    <input type="password" name="newPassword" [(ngModel)]="newPassword">
-  </label>
-  <label>
-    Confirm new password:
-    <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword">
-  </label>
-  <button type="submit">Change Password</button>
-</form>
-
-

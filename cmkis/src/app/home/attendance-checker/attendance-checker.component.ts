@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAttenCheckComponent } from '../create-atten-check/create-atten-check.component';
@@ -7,11 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from 'src/app/core1/core.service';
-
-=======
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
->>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
 
 @Component({
   selector: 'app-attendance-checker',
@@ -20,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class AttendanceCheckerComponent implements OnInit {
 
-<<<<<<< HEAD
+  auth:any;
 
   displayedColumns: string[] = [
     'id',
@@ -43,7 +39,8 @@ export class AttendanceCheckerComponent implements OnInit {
   constructor(
     private _dIaLoG:MatDialog,
     private _attendanceService:AttendanceService,
-    private _coreServices:CoreService
+    private _coreServices:CoreService,
+    private router: Router
 
     )  { }
 
@@ -58,20 +55,20 @@ export class AttendanceCheckerComponent implements OnInit {
      }
     })
    }
- 
+
    openCreateForm(data:any){
      const dialref = this._dIaLoG.open(CreateAttenCheckComponent,{
        data,
      });
-     
+
      dialref.afterClosed().subscribe({
        next: (val) => {
        if (val) {
          this.getAttendanceList();
        }
      }
-    }) 
-    
+    })
+
     }
 
     getAttendanceList(){
@@ -83,18 +80,18 @@ export class AttendanceCheckerComponent implements OnInit {
        },
        error: console.log,
      })
-       
+
    }
- 
+
    applyFilter(event: Event) {
      const filterValue = (event.target as HTMLInputElement).value;
      this.dataSource.filter = filterValue.trim().toLowerCase();
- 
+
      if (this.dataSource.paginator) {
        this.dataSource.paginator.firstPage();
      }
    }
- 
+
      deleteAttendance(id: number){
        this._attendanceService.deleteAttendance(id).subscribe({
          next: (res) => {
@@ -104,16 +101,7 @@ export class AttendanceCheckerComponent implements OnInit {
          error: console.log,
        })
      }
- 
 
-
-
-  ngOnInit(): void {
-    this.getAttendanceList()
-=======
-  auth:any;
-
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
@@ -122,7 +110,10 @@ export class AttendanceCheckerComponent implements OnInit {
     //   this.router.navigate(['/cmkis']);
     // }
 
->>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
+    this.getAttendanceList()
   }
+
+
+
 
 }

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-import { Component, OnInit,ViewChild } from '@angular/core';
+
 import { MatDialog } from '@angular/material/dialog';
 import { EmpAddEditComponent } from '../emp-add-edit/emp-add-edit.component';
 import { FacultyyService } from '../emp-add-edit/services/facultyy.service';
@@ -7,10 +6,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { CoreService } from 'src/app/core1/core.service';
-=======
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
->>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
 
 @Component({
   selector: 'app-faculty',
@@ -19,7 +16,8 @@ import { Router } from '@angular/router';
 })
 export class FacultyComponent implements OnInit {
 
-<<<<<<< HEAD
+  auth:any;
+
   displayedColumns: string[] = [
     'id',
     'firstname',
@@ -39,7 +37,7 @@ export class FacultyComponent implements OnInit {
   constructor(
     private _dailog: MatDialog ,
     private _facultyService:FacultyyService,
-    private _coreService: CoreService
+    private _coreService: CoreService,private router: Router
     ){}
 
   openAddEditEmpForm(){
@@ -57,7 +55,7 @@ export class FacultyComponent implements OnInit {
     const dialogRef = this._dailog.open(EmpAddEditComponent,{
       data,
     });
-    
+
     dialogRef.afterClosed().subscribe({
       next: (val) => {
       if (val) {
@@ -65,12 +63,12 @@ export class FacultyComponent implements OnInit {
       }
     }
    })
-    
-   
+
+
    }
 
-    
-  
+
+
   getFacultyList(){
     this._facultyService.getFacultyList().subscribe({
       next: (res) => {
@@ -80,7 +78,7 @@ export class FacultyComponent implements OnInit {
       },
       error: console.log,
     })
-      
+
   }
 
   applyFilter(event: Event) {
@@ -97,18 +95,11 @@ export class FacultyComponent implements OnInit {
         next: (res) => {
           this.getFacultyList(),
           this._coreService.openSnackBar("Faculty deleted successfully!", 'Done')
-          
+
         },
         error: console.log,
       })
     }
-
-  ngOnInit(): void {
-    this.getFacultyList()
-=======
-  auth:any;
-
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
@@ -116,8 +107,9 @@ export class FacultyComponent implements OnInit {
     //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
     //   this.router.navigate(['/cmkis']);
     // }
-
->>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
+    this.getFacultyList()
   }
+
+
 
 }
