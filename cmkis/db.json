@@ -90,18 +90,6 @@
       "password": "james123",
       "conpassword": "james123",
       "id": 4
-    },
-    {
-      "firstname": "roronoa",
-      "middlename": "onigiri",
-      "lastname": "Zoro",
-      "birthday": "2023-04-16T16:00:00.000Z",
-      "gender": "male",
-      "email": "zoro@gmail.com",
-      "contact": "09215412415",
-      "password": "zoro123",
-      "conpassword": "zoro123",
-      "id": 5
     }
   ]
 }
