@@ -24,6 +24,7 @@ import { HomeATComponent } from './home-at/home-at.component';
 import { HomeFacultyComponent } from './home-faculty/home-faculty.component';
 import { CheckAttendanceComponent } from './home-at/check-attendance/check-attendance.component';
 import { ViewAttendanceComponent } from './home-faculty/view-attendance/view-attendance.component';
+import { KeyInventoryAtComponent } from './home-at/key-inventory-at/key-inventory-at.component';
 
 
 const routes: Routes = [
@@ -31,11 +32,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'cmkis', pathMatch: 'full' },
   { path: 'cmkis', component: CmkisComponent },
 
-  
+
   // PAGES FOR ADMIN
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {path: 'account', component: AccountComponent},
       {path: 'attendance-checker', component: AttendanceCheckerComponent},
@@ -54,9 +55,10 @@ const routes: Routes = [
   // PAGES FOR ATTENDANCE CHECKER
   { path: 'login-attendance-checker', component: LoginAtndcChkrComponent },
   { path: 'home-attendance-checker', component: HomeATComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {path: 'check-attendance', component: CheckAttendanceComponent},
+      {path: 'key-inventory-attendanceChecker', component: KeyInventoryAtComponent},
     ],
   },
 
@@ -64,7 +66,7 @@ const routes: Routes = [
   // PAGES FOR FACULTY
   { path: 'login-faculty', component: LoginFacultyComponent },
   { path: 'home-faculty', component: HomeFacultyComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: 'view-attendance', component: ViewAttendanceComponent },
     ],
