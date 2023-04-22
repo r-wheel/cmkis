@@ -1,4 +1,4 @@
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="sidebar">
 
@@ -8,11 +8,11 @@
     <i class="bx bx-menu" id="btn"></i>
   </div>
   <ul class="nav-list">
-    <!-- <li>
+    <li>
         <i class='bx bx-search' ></i>
        <input type="text" placeholder="Search...">
        <span class="tooltip">Search</span>
-    </li> -->
+    </li>
     <div style="color: aliceblue; font-size: 18px; padding-bottom:18px; padding-top:10px;">Core</div>
     <li>
       <a routerLink="/home/dashboard" routerLinkActive="active-link">
@@ -91,8 +91,119 @@
   </li>
   </ul>
 </div>
-<!-- <section class="home-section">
+<section class="home-section">
     <div class="text" >Semester Management</div>
     <hr>
     <div class="text" style="font-size: 19px;" >Academic Year:</div>
 </section> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Home </title>
+    <link rel="stylesheet" href="./sidenav.component.scss">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar open">
+    <div class="logo-details">
+        <i class="fa-brands fa-keycdn"></i>
+        <div class="logo_name">CMKIS</div>
+        <!-- <i class='bx bx-menu' id="btn" ></i> -->
+    </div>
+    <ul class="nav-list">
+      <!-- <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li> -->
+      <div style="color: aliceblue; font-size: 12px;">Core</div>
+      <li>
+        <a routerLink="/home/dashboard" routerLinkActive="active-link">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a routerLink="/home/key-inventory">
+         <i class='fa-solid fa-key' ></i>
+         <span class="links_name">Key Inventory</span>
+       </a>
+       <span class="tooltip">Key Inventory</span>
+     </li>
+
+     <br>
+
+
+
+     <div style="color: aliceblue; font-size: 12px;">User Management</div>
+     <li>
+       <a routerLink="/home/faculty">
+         <i class='fa-solid fa-user' ></i>
+         <span class="links_name">Faculty</span>
+       </a>
+       <span class="tooltip">Faculty</span>
+     </li>
+     <li>
+       <a routerLink="/home/attendance-checker">
+         <i class="fa-solid fa-calendar-days"></i>
+         <span class="links_name">Attendance Checker</span>
+       </a>
+       <span class="tooltip">Attendance Checker</span>
+     </li>
+
+     <br>
+
+
+
+     <div style="color: aliceblue; font-size: 12px;">Administrative</div>
+     <li>
+       <a routerLink="/home/semester-management">
+         <i class="fa-solid fa-bars-progress"></i>
+         <span class="links_name">Semester Management</span>
+       </a>
+       <span class="tooltip">Semester Management</span>
+     </li>
+     <li>
+       <a routerLink="/home/room-key-management">
+         <i class="fa-sharp fa-solid fa-lock"></i>
+         <span class="links_name">Key Management</span>
+       </a>
+       <span class="tooltip">Key Management</span>
+     </li>
+
+     <li class="profile">
+         <div class="profile-details">
+           <img src="assets/profile.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Niko De Lara</div>
+             <div class="job">Admin</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+
+     <br>
+
+     <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Settings</span>
+      </a>
+      <span class="tooltip">Settings</span>
+    </li>
+    </ul>
+  </div>
+  <!-- <section class="home-section">
+      <div class="text" >Semester Management</div>
+      <hr>
+      <div class="text" style="font-size: 19px;" >Academic Year:</div>
+  </section> -->
+
+</body>
+</html>
