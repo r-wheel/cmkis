@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAttenCheckComponent } from '../create-atten-check/create-atten-check.component';
@@ -7,6 +8,10 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from 'src/app/core1/core.service';
 
+=======
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+>>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
 
 @Component({
   selector: 'app-attendance-checker',
@@ -15,6 +20,7 @@ import { CoreService } from 'src/app/core1/core.service';
 })
 export class AttendanceCheckerComponent implements OnInit {
 
+<<<<<<< HEAD
 
   displayedColumns: string[] = [
     'id',
@@ -104,6 +110,19 @@ export class AttendanceCheckerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAttendanceList()
+=======
+  auth:any;
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    // this.auth = localStorage.getItem('token');
+    // if (this.auth !== "Admin") {
+    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
+    //   this.router.navigate(['/cmkis']);
+    // }
+
+>>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
   }
 
 }

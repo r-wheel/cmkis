@@ -11,6 +11,10 @@ import { KeyInventoryComponent } from './key-inventory/key-inventory.component';
 import { RoomKeyManagementComponent } from './room-key-management/room-key-management.component';
 import { SemesterManagementComponent } from './semester-management/semester-management.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
+import { FormsModule } from '@angular/forms';
 
 
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
@@ -43,6 +49,7 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
 
 
 
+
 @NgModule({
     declarations: [
         HomeComponent,
@@ -53,12 +60,17 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         RoomKeyManagementComponent,
         SemesterManagementComponent,
         SettingsComponent,
+<<<<<<< HEAD
         FacultyComponent,
         EmpAddEditComponent,
         CreateAttenCheckComponent,
+=======
+        FacultyProfileComponent
+>>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
     ],
     exports: [
-        DashboardComponent
+        DashboardComponent,
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [HomeComponent],
@@ -71,6 +83,7 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         MatSelectModule,
         RouterModule,
         SharedModule,
+<<<<<<< HEAD
         MatToolbarModule,
         MatDialogModule,
         MatInputModule,
@@ -84,6 +97,12 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         MatSortModule,
         MatSnackBarModule
 
+=======
+        MatTabsModule,
+        MatTableModule,
+        ReactiveFormsModule,
+        FormsModule
+>>>>>>> 979618befc3de966f492fc73b37acb6e08dad831
     ]
 })
 export class HomeModule { }

@@ -25,6 +25,15 @@ body {
   padding: 0 15px 0 15px;
 }
 
+form{
+  background-color: rgb(20, 5, 103);
+
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  border-radius: 2em;
+}
+
 span {
   color: #fff;
   font-size: small;

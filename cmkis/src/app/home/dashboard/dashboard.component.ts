@@ -13,11 +13,12 @@ export class DashboardComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-   this.auth = localStorage.getItem('token');
+  //  this.auth = localStorage.getItem('token');
+  //   if (this.auth !== "Admin") {
+  //     window.alert("You are not authorized to this page. You will be redirected to Login Page")
+  //     this.router.navigate(['/cmkis']);
+  //   }
 
-   if (!this.auth){
-    this.router.navigate(['/login']);
-   }
 
   }
 

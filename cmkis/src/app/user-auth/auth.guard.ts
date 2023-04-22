@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): any{
 
-
     const routeurl: string = state.url;
     return this.isLogin(routeurl);
   }
@@ -27,7 +26,7 @@ export class AuthGuard implements CanActivate {
     }
 
     this.dataService.redirectUrl = routeurl;
-    this.router.navigate(['/login'], {queryParams: { returnUrl: routeurl }});
+    this.router.navigate(['/cmkis'], {queryParams: { returnUrl: routeurl }});
   }
 
 }

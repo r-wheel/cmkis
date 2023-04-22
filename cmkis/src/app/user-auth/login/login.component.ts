@@ -7,9 +7,10 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
 
   angForm: FormGroup
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
       this.angForm = this.fb.group({
-        email: ['',[Validators.required,Validators.minLength(1),Validators.email]],
+        username: ['',[Validators.required,Validators.minLength(1),Validators.email]],
         password: ['', Validators.required]
       })
   }
@@ -27,12 +28,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   postdata(angForm:any){
-    this.dataService.userlogin(angForm.value.email,angForm.value.password)
+    this.dataService.adminLogin(angForm.value.username,angForm.value.password,)
     .pipe(first())
     .subscribe(
       data=>{
-        console.log(data);
+        console.log(data.role);
         if(data.message=='success')
         //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
         this.router.navigate(['./home']);
