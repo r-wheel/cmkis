@@ -12,7 +12,7 @@ import { CoreService } from 'src/app/core1/core.service';
 })
 export class EmpAddEditComponent  implements OnInit {
 
-   // Eamil
+   // Email
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
@@ -40,6 +40,7 @@ export class EmpAddEditComponent  implements OnInit {
       birthday:'',
       gender:'',
       email:'',
+      username:'',
       contact:'',
       password: new FormControl('',Validators.required),
       conpassword:new FormControl('',Validators.required)
@@ -49,7 +50,7 @@ export class EmpAddEditComponent  implements OnInit {
     }
     )
   }
-  
+
   get f (){
     return this.reactiveform.controls;
   }
@@ -74,30 +75,29 @@ export class EmpAddEditComponent  implements OnInit {
   onFormSubmit(){
     if(this.reactiveform.valid){
       if(this.data){
-        this._facultyService.updateFaculty(this.data.id, this.reactiveform.value).subscribe({
-          next: (val:any) => {
-              this._coreService.openSnackBar("Faculty Update Successfully!", 'Done')
-              this._dialogRef.close(true); 
-          },
-          error:(err:any)=>{
-              console.error(err);
-          }
-        })
+        // this._facultyService.updateFaculty(this.data.id, this.reactiveform.value).subscribe({
+        //   next: (val:any) => {
+        //       this._coreService.openSnackBar("Faculty Update Successfully!", 'Done')
+        //       this._dialogRef.close(true);
+        //   },
+        //   error:(err:any)=>{
+        //       console.error(err);
+        //   }
+        // })
 
       }else{
 
         this._facultyService.addFaculty(this.reactiveform.value).subscribe({
           next: (val:any) => {
               this._coreService.openSnackBar("Faculty Update Successfully!", 'Done')
-              this._dialogRef.close(true); 
+              this._dialogRef.close(true);
           },
           error:(err:any)=>{
               console.error(err);
           }
         })
-
       }
-   
+
     }
     }
     ngOnInit(): void {

@@ -85,7 +85,8 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         MatTableModule,
         MatPaginatorModule,
         MatSortModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatTabsModule
     ]
 })
 export class HomeModule { }

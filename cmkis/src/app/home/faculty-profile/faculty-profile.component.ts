@@ -45,6 +45,7 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
       this.api.findOne(this.userId).pipe(
         map((user:Users) => this.user = user)
       ).subscribe()
+      console.log(this.user);
     });
 
 
@@ -55,7 +56,6 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.sub.unsubscribe();
   }
-
 
 
 

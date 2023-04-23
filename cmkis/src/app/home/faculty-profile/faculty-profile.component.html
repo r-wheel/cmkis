@@ -7,7 +7,6 @@
 
 </style>
 
-
 <!-- USER INFO HERE -->
 <h1 *ngIf="user">
   {{user.fname}} {{user.lname}}
@@ -20,10 +19,10 @@
 <h1> Schedule</h1>
 
 <!-- TABS HERE -->
-<!-- <mat-tab-group fitInkBarToContent mat-align-tabs="center" animationDuration="0ms"> -->
+<mat-tab-group fitInkBarToContent mat-align-tabs="center" animationDuration="0ms">
 
   <!-- 1ST TAB HERE -->
-  <!-- <mat-tab label="1st Sem"> -->
+  <mat-tab label="1st Sem">
 
     <!-- SCHEDULE TABLE HERE -->
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
@@ -62,19 +61,19 @@
     <button mat-raised-button color="primary">Add Schedule</button>
 
 
-  <!-- </mat-tab> -->
+  </mat-tab>
   <!-- 1ST TAB END -->
 
 
 
   <!-- 2ND TAB HERE -->
-  <!-- <mat-tab label="2nd Sem"> -->
+  <mat-tab label="2nd Sem">
     <h1>2nd sem schedule</h1>
-  <!-- </mat-tab> -->
+  </mat-tab>
   <!-- 2ND TAB END -->
 
 
-<!-- </mat-tab-group> -->
+</mat-tab-group>
 <!-- TABS END -->
 
 <hr>

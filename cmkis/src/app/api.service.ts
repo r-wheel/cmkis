@@ -25,14 +25,13 @@ export class ApiService {
   // GET SEMESTER END
 
 
-
   // GET ALL FACULTY HERE
   loadAllFaculty(){
     return this.httpClient.get(this.baseURL + 'api2.php').pipe(map(data => data));
   }
   // GET ALL FACULTY END
 
-  
+
 
   // GET FACULTY BY ID HERE
   findOne(id: number): Observable<Users> {

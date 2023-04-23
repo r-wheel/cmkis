@@ -7,15 +7,14 @@
 
 <div mat-dialog-content class="content">
 
-  
               <!-- fname/mname/lname -->
-    <div class="row"> 
+    <div class="row">
 
       <mat-form-field appearance="outline">
         <mat-label>First name</mat-label>
         <input matInput type="text" placeholder="Ex. Juan" formControlName="firstname">
       </mat-form-field>
-    
+
       <mat-form-field appearance="outline">
         <mat-label>Middle Name</mat-label>
         <input matInput type="text" placeholder="ex.  Charm"formControlName="middlename">
@@ -25,7 +24,7 @@
         <mat-label>Last Name</mat-label>
         <input matInput type="text" placeholder="ex.Dela Cruz"formControlName="lastname">
       </mat-form-field>
-     
+
   </div>
 
                <!-- birthday/contact -->
@@ -37,15 +36,15 @@
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-          
+
                 <mat-form-field appearance="outline">
                   <mat-label>Contact Number</mat-label>
-                  <input matInput type="numer" placeholder="+63" formControlName="contact">
+                  <input matInput type="numer" placeholder="+63" formControlName="contactnumber">
                 </mat-form-field>
               </div>
-              
+
                                                <!-- gender -->
-                <div>       
+                <div>
                   <mat-radio-group aria-label="Select an option" formControlName="gender" >
                     <mat-label>Gender</mat-label>
                     <mat-radio-button value="male">Male</mat-radio-button>
@@ -53,7 +52,7 @@
                   </mat-radio-group>
                 </div>
                                                   <!--email -->
-               <div>           
+               <div>
                 <div class="example-container">
                   <mat-form-field appearance="outline" class="email" >
                   <mat-label>Enter your email</mat-label>
@@ -62,8 +61,15 @@
                   </mat-form-field>
                 </div>
              </div>
+
+                                                  <!--username -->
+                <mat-form-field appearance="outline" class="email">
+                  <mat-label>Username</mat-label>
+                  <input matInput type="text" placeholder="Ex. Juan" formControlName="username">
+                </mat-form-field>
+
                                               <!-- password -->
-              <div>  
+              <div>
                   <div class="example-container">
                     <mat-form-field appearance="outline" class="password">
                       <mat-label>Enter your password</mat-label>
@@ -85,14 +91,14 @@
                         <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
                       </button>
                     </mat-form-field>
-            
+
                     <span *ngIf="f['conpassword'].getError('required') !=null" class="errormessage">Confirm password is required</span>
                     <span *ngIf="f['conpassword'].getError('Mustmatch') !=null" class="errormessage">Password is mismatch</span>
-          
+
                 </div>
              </div>
 
-</div>  
+</div>
 
 
 <div mat-dialog-action class="action">

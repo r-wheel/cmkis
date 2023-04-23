@@ -11,7 +11,7 @@ export class FacultyyService {
 
   addFaculty(data:any):Observable<any>{
     return this._http.post('http://localhost:3000/faculty',data);
-    }
+  }
 
     getFacultyList():Observable<any>{
       return this._http.get('http://localhost:3000/faculty');
@@ -20,7 +20,7 @@ export class FacultyyService {
       updateFaculty(id:number, data: any): Observable<any>{
         return this._http.put(`http://localhost:3000/faculty/${id}`,data)
       }
-  
+
       deleteFaculty(id:number): Observable<any>{
         return this._http.delete(`http://localhost:3000/faculty/${id}`)
       }
