@@ -18,10 +18,10 @@ export class FacultyyService {
     }
 
     updateFaculty(id:number, data: any): Observable<any>{
-      return this._http.post('http://localhost/api/faculty_update.php?id='+ id, data)
+      return this._http.post('http://localhost/api/faculty_update.php?id='+ id, data);
     }
 
     deleteFaculty(id:number): Observable<any>{
-      return this._http.get('http://localhost/api/faculty_delete.php?id='+ id)
+      return this._http.get('http://localhost/api/faculty_delete.php?id='+ id);
     }
 }

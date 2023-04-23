@@ -19,7 +19,7 @@ export class CreateAttenCheckComponent implements OnInit {
      if (this.email.hasError('required')) {
        return 'You must enter a email';
      }
- 
+
      return this.email.hasError('email') ? 'Not a valid email' : '';
    }
 
@@ -28,7 +28,7 @@ export class CreateAttenCheckComponent implements OnInit {
    hide = true;
    hide1 = true;
 
-   
+
 
   constructor(private _fOrMbUiLdEr: FormBuilder,
     private _attendaceService: AttendanceService,
@@ -36,13 +36,14 @@ export class CreateAttenCheckComponent implements OnInit {
     private _coreServices: CoreService,
     @Inject(MAT_DIALOG_DATA) public data:any) {
     this.attendanceForm =  this._fOrMbUiLdEr.group({
+      at_id:'',
       firstname:'',
       middlename:'',
       lastname:'',
       birthday:'',
-      gender:'',
       email:'',
-      contact:'',
+      username:'',
+      connum:'',
       password: new FormControl('',Validators.required),
       conpassword:new FormControl('',Validators.required)
     },
@@ -51,7 +52,7 @@ export class CreateAttenCheckComponent implements OnInit {
     }
     )
   }
-  
+
   get f (){
     return this.attendanceForm.controls;
   }
@@ -75,10 +76,10 @@ export class CreateAttenCheckComponent implements OnInit {
   onFormSubmit(){
     if(this.attendanceForm.valid){
       if(this.data){
-        this._attendaceService.updateAttendance(this.data.id, this.attendanceForm.value).subscribe({
+        this._attendaceService.updateAttendance(this.data.at_id, this.attendanceForm.value).subscribe({
           next: (val:any) => {
-              this._coreServices.openSnackBar("Faculty Update Successfully!", 'Done')
-              this._dIaLoGrEf.close(true); 
+              this._coreServices.openSnackBar("Attedance Checker Update Successfully!", 'Done')
+              this._dIaLoGrEf.close(true);
           },
           error:(err:any)=>{
               console.error(err);
@@ -89,8 +90,8 @@ export class CreateAttenCheckComponent implements OnInit {
 
         this._attendaceService.addAttendance(this.attendanceForm.value).subscribe({
           next: (val:any) => {
-              this._coreServices.openSnackBar("Faculty Update Successfully!", 'Done')
-              this._dIaLoGrEf.close(true); 
+              this._coreServices.openSnackBar("Attedance Checker Update Successfully!", 'Done')
+              this._dIaLoGrEf.close(true);
           },
           error:(err:any)=>{
               console.error(err);
@@ -98,10 +99,10 @@ export class CreateAttenCheckComponent implements OnInit {
         })
 
       }
-   
+
     }
     }
-  
+
   ngOnInit(): void {
     this.attendanceForm.patchValue(this.data)
   }

@@ -33,12 +33,10 @@ export class EmpAddEditComponent  implements OnInit {
     private _coreService:CoreService,
     @Inject(MAT_DIALOG_DATA) public data:any){
     this.reactiveform = this.formbuilder.group({
-      facultyid:'',
       firstname:'',
       middlename:'',
       lastname:'',
       birthday:'',
-      gender:'',
       email:'',
       username:'',
       connum:'',

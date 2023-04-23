@@ -19,14 +19,12 @@ export class AttendanceCheckerComponent implements OnInit {
   auth:any;
 
   displayedColumns: string[] = [
-    'id',
     'firstname',
     'middlename',
     'lastname',
+    'connum',
+    'username',
     'email',
-    'birthday',
-    'contact',
-    'gender',
     'action',
   ];
 
@@ -95,7 +93,7 @@ export class AttendanceCheckerComponent implements OnInit {
      deleteAttendance(id: number){
        this._attendanceService.deleteAttendance(id).subscribe({
          next: (res) => {
-           this._coreServices.openSnackBar("Faculty deleted successfully!", 'Done')
+           this._coreServices.openSnackBar("Attedance Checker deleted successfully!", 'Done')
            this.getAttendanceList()
          },
          error: console.log,

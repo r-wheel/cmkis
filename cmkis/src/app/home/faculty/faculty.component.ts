@@ -18,7 +18,6 @@ export class FacultyComponent implements OnInit {
   auth:any;
 
   displayedColumns: string[] = [
-    'facultyid',
     'firstname',
     'middlename',
     'lastname',
@@ -27,6 +26,7 @@ export class FacultyComponent implements OnInit {
     'email',
     'action',
   ];
+
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
