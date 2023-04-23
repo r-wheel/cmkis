@@ -11,7 +11,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 130px;
+  width: 5.6em;
   background: #11101d;
   padding: 6px 14px;
   z-index: 99;
@@ -245,4 +245,9 @@
   .sidebar li .tooltip {
     display: none;
   }
+}
+
+
+.closed-icon{
+  display: none;
 }

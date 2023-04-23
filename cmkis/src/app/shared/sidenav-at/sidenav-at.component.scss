@@ -11,7 +11,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 130px;
+  width: 5.6em;
   background: #11101d;
   padding: 6px 14px;
   z-index: 99;
@@ -241,6 +241,13 @@
   font-weight: 500;
   margin: 18px;
 }
+
+.closed-icon{
+  display: none;
+}
+
+
+
 @media (max-width: 420px) {
   .sidebar li .tooltip {
     display: none;
