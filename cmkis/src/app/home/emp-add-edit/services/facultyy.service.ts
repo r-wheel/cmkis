@@ -9,19 +9,19 @@ export class FacultyyService {
 
   constructor(private _http: HttpClient) { }
 
-  addFaculty(data:any):Observable<any>{
-    return this._http.post('http://localhost/api/faculty_create.php',data);
-  }
+    addFaculty(data:any):Observable<any>{
+      return this._http.post('http://localhost/api/faculty_create.php',data);
+    }
 
     getFacultyList():Observable<any>{
       return this._http.get('http://localhost/api/faculty_view.php').pipe(map(data => data));
     }
 
-      updateFaculty(id:number, data: any): Observable<any>{
-        return this._http.put(`http://localhost:3000/faculty/${id}`,data)
-      }
+    updateFaculty(id:number, data: any): Observable<any>{
+      return this._http.post('http://localhost/api/faculty_update.php?id='+ id, data)
+    }
 
-      deleteFaculty(id:number): Observable<any>{
-        return this._http.delete(`http://localhost:3000/faculty/${id}`)
-      }
+    deleteFaculty(id:number): Observable<any>{
+      return this._http.get('http://localhost/api/faculty_delete.php?id='+ id)
+    }
 }

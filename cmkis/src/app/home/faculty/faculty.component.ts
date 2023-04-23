@@ -52,7 +52,6 @@ export class FacultyComponent implements OnInit {
   openEditForm(data:any){
     const dialogRef = this._dailog.open(EmpAddEditComponent,{
       data,
-
     });
 
     console.log(data);

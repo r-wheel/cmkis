@@ -33,6 +33,7 @@ export class EmpAddEditComponent  implements OnInit {
     private _coreService:CoreService,
     @Inject(MAT_DIALOG_DATA) public data:any){
     this.reactiveform = this.formbuilder.group({
+      facultyid:'',
       firstname:'',
       middlename:'',
       lastname:'',
@@ -74,21 +75,20 @@ export class EmpAddEditComponent  implements OnInit {
   onFormSubmit(){
     if(this.reactiveform.valid){
       if(this.data){
-        // this._facultyService.updateFaculty(this.data.id, this.reactiveform.value).subscribe({
-        //   next: (val:any) => {
-        //       this._coreService.openSnackBar("Faculty Update Successfully!", 'Done')
-        //       this._dialogRef.close(true);
-        //   },
-        //   error:(err:any)=>{
-        //       console.error(err);
-        //   }
-        // })
-
-      }else{
-
-        this._facultyService.addFaculty(this.reactiveform.value).subscribe({
+        this._facultyService.updateFaculty(this.data.facultyid, this.reactiveform.value).subscribe({
           next: (val:any) => {
               this._coreService.openSnackBar("Faculty Update Successfully!", 'Done')
+              this._dialogRef.close(true);
+          },
+          error:(err:any)=>{
+              console.error(err);
+          }
+        })
+
+      }else{
+        this._facultyService.addFaculty(this.reactiveform.value).subscribe({
+          next: (val:any) => {
+              this._coreService.openSnackBar("Faculty Added Successfully!", 'Done')
               this._dialogRef.close(true);
           },
           error:(err:any)=>{
