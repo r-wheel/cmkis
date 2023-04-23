@@ -35,13 +35,13 @@ export class EmpAddEditComponent  implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any){
     this.reactiveform = this.formbuilder.group({
       firstname:'',
-      middlename:'',
+      middleinitial:'',
       lastname:'',
       birthday:'',
       gender:'',
       email:'',
       username:'',
-      contact:'',
+      connum:'',
       password: new FormControl('',Validators.required),
       conpassword:new FormControl('',Validators.required)
     },

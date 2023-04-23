@@ -1,4 +1,3 @@
-
 import { MatDialog } from '@angular/material/dialog';
 import { EmpAddEditComponent } from '../emp-add-edit/emp-add-edit.component';
 import { FacultyyService } from '../emp-add-edit/services/facultyy.service';
@@ -19,14 +18,13 @@ export class FacultyComponent implements OnInit {
   auth:any;
 
   displayedColumns: string[] = [
-    'id',
+    'facultyid',
     'firstname',
-    'middlename',
+    'middleinitial',
     'lastname',
+    'connum',
+    'username',
     'email',
-    'birthday',
-    'contact',
-    'gender',
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
@@ -54,7 +52,10 @@ export class FacultyComponent implements OnInit {
   openEditForm(data:any){
     const dialogRef = this._dailog.open(EmpAddEditComponent,{
       data,
+
     });
+
+    console.log(data);
 
     dialogRef.afterClosed().subscribe({
       next: (val) => {
@@ -64,10 +65,7 @@ export class FacultyComponent implements OnInit {
     }
    })
 
-
    }
-
-
 
   getFacultyList(){
     this._facultyService.getFacultyList().subscribe({

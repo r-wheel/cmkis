@@ -17,7 +17,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Middle Name</mat-label>
-        <input matInput type="text" placeholder="ex.  Charm"formControlName="middlename">
+        <input matInput type="text" placeholder="ex.  Charm"formControlName="middleinitial">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -39,7 +39,7 @@
 
                 <mat-form-field appearance="outline">
                   <mat-label>Contact Number</mat-label>
-                  <input matInput type="numer" placeholder="+63" formControlName="contactnumber">
+                  <input matInput type="numer" placeholder="+63" formControlName="connum">
                 </mat-form-field>
               </div>
 
@@ -51,6 +51,7 @@
                     <mat-radio-button value="female">Female</mat-radio-button>
                   </mat-radio-group>
                 </div>
+
                                                   <!--email -->
                <div>
                 <div class="example-container">
@@ -81,6 +82,7 @@
                     <span *ngIf="f['password'].getError('required') !=null" class="errormessage">Password is required</span>
                   </div>
               </div>
+
                                            <!-- confim-password -->
                <div>
                   <div class="example-container" >

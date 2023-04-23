@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class FacultyyService {
   }
 
     getFacultyList():Observable<any>{
-      return this._http.get('http://localhost:3000/faculty');
-      }
+      return this._http.get('http://localhost/api/faculty_view.php').pipe(map(data => data));
+    }
 
       updateFaculty(id:number, data: any): Observable<any>{
         return this._http.put(`http://localhost:3000/faculty/${id}`,data)
