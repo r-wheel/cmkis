@@ -39,7 +39,6 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
     //   this.router.navigate(['/cmkis']);
     // }
 
-
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.userId = parseInt(params['id']);
       this.api.findOne(this.userId).pipe(
@@ -56,8 +55,6 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.sub.unsubscribe();
   }
-
-
 
   getAllFaculty(){
     this.allFacultySubscribe = this.api.loadAllFaculty().subscribe(data =>{

@@ -7,7 +7,6 @@ import { Observable, map } from 'rxjs';
 })
 export class AttendanceService {
 
-
   constructor(private _hTtP: HttpClient) { }
 
     addAttendance(data:any):Observable<any>{

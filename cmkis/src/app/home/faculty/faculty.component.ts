@@ -24,6 +24,7 @@ export class FacultyComponent implements OnInit {
     'connum',
     'username',
     'email',
+    'viewprofile',
     'action',
   ];
 
