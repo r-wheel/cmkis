@@ -4,7 +4,6 @@ import { FacultyyService } from './services/facultyy.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CoreService } from 'src/app/core1/core.service';
 
-
 @Component({
   selector: 'app-emp-add-edit',
   templateUrl: './emp-add-edit.component.html',
@@ -35,7 +34,7 @@ export class EmpAddEditComponent  implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any){
     this.reactiveform = this.formbuilder.group({
       firstname:'',
-      middleinitial:'',
+      middlename:'',
       lastname:'',
       birthday:'',
       gender:'',

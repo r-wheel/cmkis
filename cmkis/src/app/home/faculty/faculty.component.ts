@@ -20,7 +20,7 @@ export class FacultyComponent implements OnInit {
   displayedColumns: string[] = [
     'facultyid',
     'firstname',
-    'middleinitial',
+    'middlename',
     'lastname',
     'connum',
     'username',

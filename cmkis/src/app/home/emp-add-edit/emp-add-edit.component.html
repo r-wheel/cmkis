@@ -17,7 +17,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Middle Name</mat-label>
-        <input matInput type="text" placeholder="ex.  Charm"formControlName="middleinitial">
+        <input matInput type="text" placeholder="ex.  Charm"formControlName="middlename">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -27,14 +27,11 @@
 
   </div>
 
-               <!-- birthday/contact -->
+               <!-- username/contact -->
                <div class="row">
-                <mat-form-field appearance="outline">
-                  <mat-label>Birthday</mat-label>
-                  <input matInput [matDatepicker]="picker" formControlName="birthday">
-                  <mat-hint>MM/DD/YYYY</mat-hint>
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
+                <mat-form-field appearance="outline" class="email">
+                  <mat-label>Username</mat-label>
+                  <input matInput type="text" placeholder="Ex. Juan" formControlName="username">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
@@ -62,12 +59,6 @@
                   </mat-form-field>
                 </div>
              </div>
-
-                                                  <!--username -->
-                <mat-form-field appearance="outline" class="email">
-                  <mat-label>Username</mat-label>
-                  <input matInput type="text" placeholder="Ex. Juan" formControlName="username">
-                </mat-form-field>
 
                                               <!-- password -->
               <div>

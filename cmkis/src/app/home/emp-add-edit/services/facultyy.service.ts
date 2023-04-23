@@ -10,7 +10,7 @@ export class FacultyyService {
   constructor(private _http: HttpClient) { }
 
   addFaculty(data:any):Observable<any>{
-    return this._http.post('http://localhost:3000/faculty',data);
+    return this._http.post('http://localhost/api/faculty_create.php',data);
   }
 
     getFacultyList():Observable<any>{
