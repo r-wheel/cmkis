@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map,first } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -11,6 +12,9 @@ export class KeyInventoryComponent implements OnInit {
 
   auth:any;
   roomlist:any;
+  rooms:any;
+  status:any;
+  isAvailable:boolean;
 
   constructor(private router: Router,
               private api: ApiService) { }
@@ -26,6 +30,10 @@ export class KeyInventoryComponent implements OnInit {
     this.api.getAllRoom().subscribe((data:any) => {
       this.roomlist=data;
     })
+
+    // this.api.getAllRoom().pipe(first()).subscribe((data:any) => {
+    //   console.log(data.availability)
+    // })
 
   }
 
