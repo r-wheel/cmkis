@@ -10,11 +10,18 @@ import { Observable } from 'rxjs';
 
 export class ApiService {
   redirectUrl!: string;
-  baseURL: string = 'http://localhost/cmkis/';
+  baseURL: string = 'http://localhost/api/';
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
   constructor(private httpClient : HttpClient) { }
+
+
+  // GET ALL FACULTY HERE
+  getAcadYear(){
+    return this.httpClient.get(this.baseURL + 'acadYear_view.php').pipe(map(data => data));
+  }
+  // GET ALL FACULTY END
 
 
 

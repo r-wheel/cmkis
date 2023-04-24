@@ -1,7 +1,26 @@
 <h1>Semester management</h1>
 
-<h3>Academic Year: 2022-2023 <button>Update</button></h3>
+<h3>Academic Year: {{selected}} </h3>
 
-<h3>Semester: 1st Semester <button>Update</button></h3>
+<mat-form-field appearance="fill">
+  <mat-label>Select an Academic Year</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let acad of acadYear" value={{acad.academicYear}}>{{acad.academicYear}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field appearance="outline">
+  <mat-label>Semester</mat-label>
+  <input matInput type="text" placeholder="Ex. 2020-2021" formControlName = "academicYear" >
+</mat-form-field>
+
+<button>Add</button>
+
+<br>
+<br>
+<h3>Semester: 1st Semester <button>Select Semester</button></h3>
 
 
