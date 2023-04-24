@@ -1,26 +1,45 @@
-<h1>Semester management</h1>
+<h1>Academic Year and Semester management</h1>
 
-<h3>Academic Year: {{selected}} </h3>
+<h3>Academic Year: 2022-2023 </h3>
+<h3>Semester: 1st Semester</h3>
+
+
+<button mat-raised-button color="primary" class="button" type="submit">Modify </button>
+
+
 
 <mat-form-field appearance="fill">
   <mat-label>Select an Academic Year</mat-label>
-  <mat-select [(value)]="selected">
-    <mat-option>None</mat-option>
+  <mat-select [(value)]="selectedAcadYear">
     <mat-option *ngFor="let acad of acadYear" value={{acad.academicYear}}>{{acad.academicYear}}</mat-option>
   </mat-select>
 </mat-form-field>
 
 <br>
-
+<form [formGroup]="acadyearForm" (ngSubmit)="onFormSubmit()" >
 <mat-form-field appearance="outline">
-  <mat-label>Semester</mat-label>
+  <mat-label>Add New Academic Year</mat-label>
   <input matInput type="text" placeholder="Ex. 2020-2021" formControlName = "academicYear" >
 </mat-form-field>
-
-<button>Add</button>
-
+<br>
+<button mat-raised-button color="primary" class="button" type="submit">Add Academic Year</button>
+</form>
 <br>
 <br>
-<h3>Semester: 1st Semester <button>Select Semester</button></h3>
+<br>
+<br>
+<h3>Semester: {{selectedSemester}}</h3>
+<mat-form-field appearance="fill">
+  <mat-label>Select Semester</mat-label>
+  <mat-select [(value)]="selectedSemester">
+    <mat-option value="1st Semester">1st Semester</mat-option>
+    <mat-option value="2nd Semester">2nd Semester</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br>
+<br>
+<button mat-raised-button color="primary" class="button" type="submit">Update </button>
+
 
 

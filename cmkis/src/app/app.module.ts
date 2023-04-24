@@ -12,10 +12,9 @@ import { SharedModule } from "./shared/shared.module";
 import { CmkisComponent } from './cmkis/cmkis.component';
 import { HomeAtModule } from './home-at/home-at.module';
 import { HomeFacultyModule } from './home-faculty/home-faculty.module';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-
-
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -37,7 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     SharedModule,
     HomeAtModule,
     HomeFacultyModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

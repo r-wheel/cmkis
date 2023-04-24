@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-key-inventory',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 export class KeyInventoryComponent implements OnInit {
 
   auth:any;
+  roomlist:any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private api: ApiService) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
@@ -18,6 +21,11 @@ export class KeyInventoryComponent implements OnInit {
     //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
     //   this.router.navigate(['/cmkis']);
     // }
+
+
+    this.api.getAllRoom().subscribe((data:any) => {
+      this.roomlist=data;
+    })
 
   }
 
