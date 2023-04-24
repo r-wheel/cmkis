@@ -16,11 +16,18 @@ export class ApiService {
 
   constructor(private httpClient : HttpClient) { }
 
-  // GET ALL ACADYEAR HERE
+  // GET ALL SCHEDULE HERE
+  getAllSched(){
+    return this.httpClient.get(this.baseURL + 'schedule_view.php').pipe(map(data => data));
+  }
+  // GET ALL SCHEDULE END
+
+
+  // GET ALL ROOM HERE
   getAllRoom(){
     return this.httpClient.get(this.baseURL + 'rooms_view.php').pipe(map(data => data));
   }
-  // GET ALL ACADYEAR END
+  // GET ALL ROOM END
 
 
   addAcadYear(data:any): Observable<any>{

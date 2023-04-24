@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { timer } from 'rxjs';
+import { map, timer } from 'rxjs';
+
 
 @Component({
   selector: 'app-check-attendance',
@@ -12,9 +14,22 @@ export class CheckAttendanceComponent implements OnInit {
   dateDisplay:Date;
   timeDisplay:Date;
 
+  displayColumns: string[] = [
+    'room',
+    'faculty',
+    'coursecode',
+    'subject',
+    'section',
+    'day',
+    'time_start',
+    'time_end',
+  ];
+
+  dataSource: any = [];
+
   auth:any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
@@ -23,10 +38,20 @@ export class CheckAttendanceComponent implements OnInit {
     //   this.router.navigate(['/cmkis']);
     // }
 
+
+
     timer(0,1000).subscribe(()=>{
       this.dateDisplay = new Date ()
       this.timeDisplay = new Date ()
+      this.getAllSched();
     })
+
+  }
+
+  getAllSched(){
+    return this.httpClient.get('http://localhost/api/schedule_view.php').subscribe((data => {
+      this.dataSource = data;
+    }));
 
   }
 }
