@@ -43,7 +43,7 @@ export class AttendanceCheckerComponent implements OnInit {
     )  { }
 
 
-  createAttendanceForm(){
+    createAttendanceForm(){
     const dialref =  this._dIaLoG.open(CreateAttenCheckComponent)
     dialref.afterClosed().subscribe({
      next: (val) => {

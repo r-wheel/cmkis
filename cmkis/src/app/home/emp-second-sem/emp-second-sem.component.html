@@ -1,0 +1,85 @@
+<div mat-dialog-title>
+  <h1>Second Semester Form</h1>
+</div>
+<form [formGroup]="SecondSem" (ngSubmit)="onFormSubmit2()">
+  <div mat-dialog-content class="content">
+
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Course Code</mat-label>
+              <input matInput type="text" placeholder="Ex. It102" formControlName="courseCode2">
+          </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Subject</mat-label>
+            <input matInput type="text" placeholder="Ex. Algorithms" formControlName="subject2">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+          <mat-label>Room No.</mat-label>
+          <input matInput type="text" placeholder="Ex. 10 " formControlName="room2">
+      </mat-form-field>
+  </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Day</mat-label>
+          <mat-select [formControl]="days2" required formControlName="day2">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let value of cycles2" [value]="value">
+              {{value}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="days2.hasError('required')">Please choose an Day</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Section</mat-label>
+        <mat-select [formControl]="sections2" required formControlName="section2">
+          <mat-option>--First Year--</mat-option>
+          <mat-option *ngFor="let value of firstYear2" [value]="value">
+            {{value}}
+          </mat-option>
+          <mat-option>--Second Year--</mat-option>
+          <mat-option *ngFor="let value of secondYear2" [value]="value">
+            {{value}}
+          </mat-option>
+          <mat-option>--Third Year--</mat-option>
+          <mat-option *ngFor="let value of thirdYear2" [value]="value">
+            {{value}}
+          </mat-option>
+          <mat-option>--Fourth Year--</mat-option>
+          <mat-option *ngFor="let value of fourthYear2" [value]="value">
+            {{value}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="sections2.hasError('required')">Please choose an Section</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+          <mat-label>Time Start</mat-label>
+          <input matInput type="text" placeholder="Ex. 7:00 Am" formControlName="timeStart2">
+      </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Time End</mat-label>
+        <input matInput type="text" placeholder="Ex. 11:00 Am" formControlName="timeEnd2">
+    </mat-form-field>
+</div>
+
+  </div>
+  <div mat-dialog-actions class="action">
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Submit'}}</button>
+  </div>
+</form>
