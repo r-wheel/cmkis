@@ -39,5 +39,4 @@ export class SidenavFacultyComponent implements OnInit {
     this.router.navigate(['./cmkis']);
   }
 
-
 }
