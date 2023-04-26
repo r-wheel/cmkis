@@ -22,6 +22,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { ChartModule } from 'angular-highcharts';
+
 import { RouterModule } from '@angular/router';
 import { SharedModule } from "../shared/shared.module";
 // Faculty-import
@@ -85,6 +87,7 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         MatSortModule,
         MatSnackBarModule,
         MatTabsModule,
+        ChartModule 
     ]
 })
 export class HomeModule { }
