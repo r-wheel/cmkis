@@ -7,6 +7,8 @@ import { CheckAttendanceComponent } from './check-attendance/check-attendance.co
 import { MatTabsModule } from '@angular/material/tabs';
 import { KeyInventoryAtComponent } from './key-inventory-at/key-inventory-at.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MatTableModule } from '@angular/material/table';
     RouterModule,
     SharedModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class HomeAtModule { }

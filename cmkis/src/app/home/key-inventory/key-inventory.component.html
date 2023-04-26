@@ -1,4 +1,4 @@
-<h1>Keys</h1>
+<h1>Key Inventory</h1>
 <div class="container">
   <mat-card class="example-card" *ngFor="let room of roomlist">
     <mat-card-header>
@@ -8,7 +8,7 @@
     <img src="assets/key-icon.png" alt="key icon">
     <mat-card-actions >
       <button mat-raised-button color="primary" *ngIf="(room.availabilty === 'Available');">LEND</button>
-      <button mat-raised-button color="primary" *ngIf="(room.availabilty === 'Used');">RETURN</button>
+      <button mat-raised-button color="primary" *ngIf="(room.availabilty === 'Not Available');">RETURN</button>
     </mat-card-actions>
   </mat-card>
 </div>

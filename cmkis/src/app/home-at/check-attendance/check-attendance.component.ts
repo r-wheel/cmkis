@@ -24,6 +24,7 @@ export class CheckAttendanceComponent implements OnInit {
     'day',
     'time_start',
     'time_end',
+    'action',
   ];
 
   dataSourceAM: any;
@@ -52,7 +53,6 @@ export class CheckAttendanceComponent implements OnInit {
 
   }
 
-
   getAllSched(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.httpClient.get('http://localhost/api/schedule_view.php').subscribe(
@@ -68,8 +68,7 @@ export class CheckAttendanceComponent implements OnInit {
   }
 
 
-  toDisplay(data){
-    console.log(data);
+  toDisplay(data){;
     if (this.toDay() === 'Monday'){
       this.getAllMonday(data);
     }
@@ -118,7 +117,8 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allMonday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
@@ -147,7 +147,8 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allTuesday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
@@ -175,10 +176,12 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allWednesday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
+    console.log(activeSched);
     this.dataSourceActive = activeSched;
   }
 
@@ -203,7 +206,8 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allThursday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
@@ -231,7 +235,8 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allFriday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
@@ -259,7 +264,8 @@ export class CheckAttendanceComponent implements OnInit {
 
     // GET ACTIVE
     let date: Date = new Date();
-    let time = date.toLocaleTimeString();
+    let timeOptions = {hour12: false};
+    let time = date.toLocaleTimeString('en-US', timeOptions);
     let activeSched = allSaturday.filter(emp => {
       return (emp.time_start <= time && emp.time_end >= time);
     });
