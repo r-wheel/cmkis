@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CheckAttendanceComponent } from './check-attendance/check-attendance.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { KeyInventoryAtComponent } from './key-inventory-at/key-inventory-at.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { KeyInventoryAtComponent } from './key-inventory-at/key-inventory-at.com
     RouterModule,
     SharedModule,
     MatTabsModule,
+    MatTableModule
   ]
 })
 export class HomeAtModule { }
