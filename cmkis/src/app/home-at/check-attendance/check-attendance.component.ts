@@ -26,7 +26,8 @@ export class CheckAttendanceComponent implements OnInit {
     'time_end',
   ];
 
-  dataSource: any;
+  dataSourceAM: any;
+  dataSourcePM: any;
 
   auth:any;
 
@@ -55,15 +56,15 @@ export class CheckAttendanceComponent implements OnInit {
     return new Promise((resolve, reject) => {
       this.httpClient.get('http://localhost/api/schedule_view.php').subscribe(
         (data) => {
-          resolve(this.toDisplay(data));
-        },
+          resolve(
+            this.toDisplay(data)
+            );},
         (error) => {
           reject(error);
         }
       );
     });
   }
-
 
 
   toDisplay(data){
@@ -75,16 +76,16 @@ export class CheckAttendanceComponent implements OnInit {
       this.getAllTuesday(data);
     }
     else if (this.toDay() === 'Wednesday') {
-      this.getAllTuesday(data);
+      this.getAllWednesday(data);
     }
     else if (this.toDay() === 'Thursday') {
-      this.getAllTuesday(data);
+      this.getAllThursday(data);
     }
     else if (this.toDay() === 'Friday') {
-      this.getAllTuesday(data);
+      this.getAllFriday(data);
     }
     else if (this.toDay() === 'Saturday') {
-      this.getAllTuesday(data);
+      this.getAllSaturday(data);
     }
   }
 
@@ -96,37 +97,62 @@ export class CheckAttendanceComponent implements OnInit {
     return toDay;
   }
 
-  
+
   getAllMonday(data){
     const allMonday = data.filter(obj => obj.day === 'Monday');
-    this.dataSource = allMonday;
+    this.dataSourceAM = allMonday;
   }
 
   getAllTuesday(data){
     const allTuesday = data.filter(obj => obj.day === 'Tuesday');
-    this.dataSource = allTuesday;
+    let amSched = allTuesday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;;
+
   }
 
   getAllWednesday(data){
     const allWednesday = data.filter(obj => obj.day === 'Wednesday');
-    this.dataSource = allWednesday;
+    let amSched = allWednesday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;
+    let pmSched = allWednesday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
   }
 
   getAllThursday(data){
     const allThursday = data.filter(obj => obj.day === 'Thursday');
-    this.dataSource = allThursday;
+    let amSched = allThursday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;
   }
 
   getAllFriday(data){
     const allFriday = data.filter(obj => obj.day === 'Friday');
-    this.dataSource = allFriday;
+    let amSched = allFriday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;
   }
 
   getAllSaturday(data){
     const allSaturday = data.filter(obj => obj.day === 'Saturday');
-    this.dataSource = allSaturday;
+    let amSched = allSaturday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;
   }
-
 
 
 }
