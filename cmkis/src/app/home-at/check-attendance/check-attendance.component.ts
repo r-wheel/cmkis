@@ -28,6 +28,7 @@ export class CheckAttendanceComponent implements OnInit {
 
   dataSourceAM: any;
   dataSourcePM: any;
+  dataSourceActive: any;
 
   auth:any;
 
@@ -100,58 +101,169 @@ export class CheckAttendanceComponent implements OnInit {
 
   getAllMonday(data){
     const allMonday = data.filter(obj => obj.day === 'Monday');
-    this.dataSourceAM = allMonday;
+
+    // GET AM
+    let amSched = allMonday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour < 12;
+    });
+    this.dataSourceAM = amSched;
+
+    // GET PM
+    let pmSched = allMonday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allMonday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
+
   }
+
+
 
   getAllTuesday(data){
     const allTuesday = data.filter(obj => obj.day === 'Tuesday');
+
+    // GET AM
     let amSched = allTuesday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour < 12;
     });
-    this.dataSourceAM = amSched;;
+    this.dataSourceAM = amSched;
 
+    // GET PM
+    let pmSched = allTuesday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allTuesday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
   }
+
+
 
   getAllWednesday(data){
     const allWednesday = data.filter(obj => obj.day === 'Wednesday');
+
+    // GET AM
     let amSched = allWednesday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour < 12;
     });
     this.dataSourceAM = amSched;
+
+    // GET PM
     let pmSched = allWednesday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour >= 12;
     });
     this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allWednesday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
   }
+
+
 
   getAllThursday(data){
     const allThursday = data.filter(obj => obj.day === 'Thursday');
+
+    // GET AM
     let amSched = allThursday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour < 12;
     });
     this.dataSourceAM = amSched;
+
+    // GET PM
+    let pmSched = allThursday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allThursday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
   }
+
+
 
   getAllFriday(data){
     const allFriday = data.filter(obj => obj.day === 'Friday');
+
+    // GET AM
     let amSched = allFriday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour < 12;
     });
     this.dataSourceAM = amSched;
+
+    // GET PM
+    let pmSched = allFriday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allFriday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
   }
+
+
 
   getAllSaturday(data){
     const allSaturday = data.filter(obj => obj.day === 'Saturday');
+
+    // GET AM
     let amSched = allSaturday.filter(faculty => {
       const hour = parseInt(faculty.time_start.split(":")[0]);
       return hour < 12;
     });
     this.dataSourceAM = amSched;
+
+    // GET PM
+    let pmSched = allSaturday.filter(faculty => {
+      const hour = parseInt(faculty.time_start.split(":")[0]);
+      return hour >= 12;
+    });
+    this.dataSourcePM = pmSched;
+
+    // GET ACTIVE
+    let date: Date = new Date();
+    let time = date.toLocaleTimeString();
+    let activeSched = allSaturday.filter(emp => {
+      return (emp.time_start <= time && emp.time_end >= time);
+    });
+    this.dataSourceActive = activeSched;
   }
 
 
