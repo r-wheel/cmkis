@@ -1,4 +1,6 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-sidenav-at',
@@ -9,7 +11,7 @@ export class SidenavAtComponent implements OnInit {
 
   name = 'Angular ' + VERSION.major;
 
-  constructor() { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     // let sidebar = document.querySelector('.sidebar');
@@ -32,10 +34,12 @@ export class SidenavAtComponent implements OnInit {
     //   }
     // }
 
-
-
-
-
   }
+
+  logOut(){
+    this.api.deleteToken();
+    this.router.navigate(['./cmkis']);
+  }
+
 
 }
