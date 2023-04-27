@@ -20,6 +20,7 @@ export class EmpFirstsemComponent implements OnInit {
     'Sunday',
   ];
  firstYear: String [] =[
+    '1A',
     '1A G-1',
     '1A G-2',
     '1B G-1',
@@ -80,45 +81,64 @@ thirdYear: string [] = [
     '3I G-2',
     '3J G-1',
     '3J G-2',
-  ] 
+  ]
 fourthYear: string [] = [
 
+    '4A',
     '4A G-1',
     '4A G-2',
+    '4B',
     '4B G-1',
     '4B G-2',
+    '4C',
     '4C G-1',
     '4C G-2',
+    '4D',
     '4D G-1',
     '4D G-2',
+    '4E',
     '4E G-1',
     '4E G-2',
+    '4F',
     '4F G-1',
     '4F G-2',
+    '4G',
     '4G G-1',
     '4G G-2',
+    '4H',
     '4H G-1',
     '4H G-2',
+    '4I',
     '4I G-1',
     '4I G-2',
+    '4J',
     '4J G-1',
     '4J G-2',
+    '4K',
     '4K G-1',
     '4K G-2',
+    '4L',
     '4L G-1',
     '4L G-2',
+    '4M',
     '4M G-1',
     '4M G-2',
+    '4N',
     '4N G-1',
     '4N G-2',
+    '4O',
     '4O G-1',
     '4O G-2',
+    '4P',
     '4P G-1',
     '4P G-2',
+    '4Q',
     '4Q G-1',
     '4Q G-2',
+    '4R',
     '4R G-1',
     '4R G-2',
+    '4S',
     '4S G-1',
     '4S G-2',
 
@@ -133,15 +153,16 @@ sections = new FormControl('', [Validators.required, Validators.email]);
     private _dialogRef: MatDialogRef<EmpFirstsemComponent >,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _coreService: CoreService,
-  ) { 
+  ) {
     this.Firstsem = this._formbuilder.group({
-      courseCode: '',
+      facultyid: '',
+      coursecode: '',
       subject: '',
-      room: '',
-      day: '',
       section: '',
-      timeStart: '',
-      timeEnd: '',
+      day: '',
+      time_start: '',
+      time_end: '',
+      room: '',
     });
   }
 
@@ -150,8 +171,9 @@ sections = new FormControl('', [Validators.required, Validators.email]);
   }
   onFormSubmit() {
     if (this.Firstsem.valid) {
+      console.log(this.data.facultyid);
       if (this.data) {
-        this._empService.updatefirstSem(this.data.id, this.Firstsem.value).subscribe({
+        this._empService.updatefirstSem(this.data.facultyid, this.Firstsem.value).subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Employee detail updated!');
               this._dialogRef.close(true);
@@ -160,8 +182,9 @@ sections = new FormControl('', [Validators.required, Validators.email]);
               console.error(err);
             },
           });
-      } else {
-        this._empService.addfirstSem(this.Firstsem.value).subscribe({
+      }
+      else {
+        this._empService.addfirstSem(this.data.facultyid, this.Firstsem.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Employee added successfully');
             this._dialogRef.close(true);

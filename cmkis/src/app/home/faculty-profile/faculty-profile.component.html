@@ -83,11 +83,11 @@
               <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
               <td mat-cell *matCellDef="let row">
 
-                <button mat-icon-button color="primary" (click)=" openEditForm(row)">
+                <button mat-icon-button color="primary" (click)="openEditForm(row)">
                   <mat-icon>edit</mat-icon>
                 </button>
 
-                <button mat-icon-button color="warn" (click)="deletefirstSem(row.id)">
+                <button mat-icon-button color="warn" (click)="deletefirstSem(row.scheduleid)">
                   <mat-icon>delete</mat-icon>
                 </button>
 
@@ -172,7 +172,6 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Time End </th>
             <td mat-cell *matCellDef="let row"> {{row.timeEnd2}} </td>
           </ng-container>
-
 
 
           <ng-container matColumnDef="action">

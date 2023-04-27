@@ -18,7 +18,6 @@ export class RoomKeyManagementComponent implements OnInit {
   auth:any;
   displayedColumns: string[] = [
     'roomName',
-    'keyNo',
     'action',
 
   ];
@@ -46,12 +45,12 @@ export class RoomKeyManagementComponent implements OnInit {
        }
       })
      }
-  
+
      openCreateForm(data:any){
        const dialref = this._dIaLoG.open(EmpKeymanagementComponent,{
          data,
        });
-  
+
        dialref.afterClosed().subscribe({
          next: (val) => {
          if (val) {
@@ -59,9 +58,9 @@ export class RoomKeyManagementComponent implements OnInit {
          }
        }
       })
-  
+
       }
-  
+
       getKeymanagementList(){
        this._KeymanagentService.getKeymanagementList().subscribe({
          next: (res) => {
@@ -71,18 +70,18 @@ export class RoomKeyManagementComponent implements OnInit {
          },
          error: console.log,
        })
-  
+
      }
-  
+
      applyFilter(event: Event) {
        const filterValue = (event.target as HTMLInputElement).value;
        this.dataSource.filter = filterValue.trim().toLowerCase();
-  
+
        if (this.dataSource.paginator) {
          this.dataSource.paginator.firstPage();
        }
      }
-  
+
        deleteKeymanagement(id: number){
          this._KeymanagentService.deleteKeymanagement(id).subscribe({
            next: (res) => {

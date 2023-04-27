@@ -89,6 +89,20 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
     });
   }
 
+  openEditForm(data: any) {
+    const dialogRef = this.dialog.open(EmpFirstsemComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getfirstSemList();
+        }
+      },
+    });
+  }
+
   getfirstSemList() {
       this.sub = this.activatedRoute.params.subscribe(params => {
       this.userId = parseInt(params['id']);
@@ -102,7 +116,6 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
       })
     });
   }
-
 
 
   applyFilter(event: Event) {
@@ -124,19 +137,7 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
     });
   }
 
-  openEditForm(data: any) {
-    const dialogRef = this.dialog.open(EmpFirstsemComponent, {
-      data,
-    });
 
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-          this.getfirstSemList();
-        }
-      },
-    });
-  }
 
 // second sem
 
@@ -209,7 +210,6 @@ openEditForm2(data: any) {
       this.api.findOne(this.userId).pipe(
         map((user:Users) => this.user = user)
       ).subscribe()
-      console.log(this.user);
     });
 
 

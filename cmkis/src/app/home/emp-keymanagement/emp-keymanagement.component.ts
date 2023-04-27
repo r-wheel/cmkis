@@ -14,8 +14,6 @@ export class EmpKeymanagementComponent implements OnInit {
 Keymanagement: FormGroup;
 
 
-
-
   constructor(
     private _formbuilder: FormBuilder,
     private _KeyService: KeyManagementService,
@@ -25,7 +23,7 @@ Keymanagement: FormGroup;
   ) {
     this.Keymanagement = this._formbuilder.group({
       roomName:'',
-      keyNo:'',
+      roomId:'',
     });
   }
 
@@ -36,7 +34,7 @@ Keymanagement: FormGroup;
   onFormSubmit() {
     if (this.Keymanagement.valid) {
       if (this.data) {
-        this._KeyService.updateKeymanagement(this.data.id, this.Keymanagement.value).subscribe({
+        this._KeyService.updateKeymanagement(this.data.roomId, this.Keymanagement.value).subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Employee detail updated!');
               this._dialogRef.close(true);

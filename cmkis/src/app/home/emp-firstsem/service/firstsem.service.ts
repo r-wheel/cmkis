@@ -9,12 +9,12 @@ export class FirstsemService {
 
   constructor(private _http: HttpClient) {}
 
-  addfirstSem(data: any): Observable<any> {
-    return this._http.post('http://localhost:3000/firstSem', data);
+  addfirstSem(id: number, data: any): Observable<any> {
+    return this._http.post('http://localhost/api/schedule_create-byid.php?id=' + id, data);
   }
 
   updatefirstSem(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/firstSem/${id}`, data);
+    return this._http.put(`http://localhost/api/schedule_update-byid.php?id=` + id, data);
   }
 
   getfirstSemList(id: number): Observable<any> {
@@ -22,6 +22,6 @@ export class FirstsemService {
   }
 
   deletefirstSem(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3000/firstSem/${id}`);
+    return this._http.get('http://localhost/api/schedule_delete-byid.php?id='+ id);
   }
 }

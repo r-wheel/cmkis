@@ -11,18 +11,18 @@ export class KeyManagementService {
   constructor(private _http: HttpClient) {}
 
   addKeymanagement(data: any): Observable<any> {
-    return this._http.post('http://localhost:3000/keyRoom', data);
+    return this._http.post('http://localhost/api/rooms_create.php', data);
   }
 
   updateKeymanagement(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/keyRoom/${id}`, data);
+    return this._http.put(`http://localhost/api/rooms_update.php?id=` + id, data);
   }
 
   getKeymanagementList(): Observable<any> {
-    return this._http.get('http://localhost:3000/keyRoom');
+    return this._http.get('http://localhost/api/rooms_view.php');
   }
 
   deleteKeymanagement(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3000/keyRoom/${id}`);
+    return this._http.get('http://localhost/api/rooms_delete.php?id='+ id);
   }
 }

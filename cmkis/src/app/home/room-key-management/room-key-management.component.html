@@ -22,7 +22,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Room Name </th>
         <td mat-cell *matCellDef="let row"> {{row.roomName}} </td>
       </ng-container>
-      
+
 
       <ng-container matColumnDef='keyNo'>
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Key No. </th>
@@ -38,7 +38,7 @@
               <mat-icon>edit</mat-icon>
             </button>
 
-            <button mat-icon-button color="warn" (click)="deleteKeymanagement(row.id)">
+            <button mat-icon-button color="warn" (click)="deleteKeymanagement(row.roomId)">
               <mat-icon>delete</mat-icon>
             </button>
 
