@@ -91,5 +91,56 @@
       "conpassword": "james123",
       "id": 4
     }
+  ],
+  "firstSem": [
+    {
+      "courseCode": "102",
+      "subject": "English",
+      "room": "1",
+      "day": "Monday",
+      "section": "1A G-1",
+      "timeStart": "6:00 Am",
+      "timeEnd": "12:00 Pm",
+      "id": 1
+    },
+    {
+      "courseCode": "103",
+      "subject": "Algo",
+      "room": "10",
+      "day": "Tuesday",
+      "section": "1A G-2",
+      "timeStart": "6:30 am",
+      "timeEnd": "12:00 pm",
+      "id": 2
+    }
+  ],
+  "secondSem": [
+    {
+      "courseCode2": "102",
+      "subject2": "British",
+      "room2": "1",
+      "day2": "Monday",
+      "section2": "1A G-1",
+      "timeStart2": "6:00 am",
+      "timeEnd2": "7:00 am ",
+      "id": 1
+    },
+    {
+      "courseCode2": "102",
+      "subject2": "networking",
+      "room2": "5",
+      "day2": "Wednestday",
+      "section2": "4F G-1",
+      "timeStart2": "12:00 Pm",
+      "timeEnd2": "5:00 Pm",
+      "id": 2
+    }
+  ],
+  "keyRoom": [
+    {
+      "roomName": "It 203",
+      "keyNo": "10",
+      "id": 1
+    }
   ]
 }

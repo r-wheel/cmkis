@@ -42,6 +42,9 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Attendance-Checker-import
 import { CreateAttenCheckComponent } from './create-atten-check/create-atten-check.component';
+import { EmpFirstsemComponent } from './emp-firstsem/emp-firstsem.component';
+import { EmpSecondSemComponent } from './emp-second-sem/emp-second-sem.component';
+import { EmpKeymanagementComponent } from './emp-keymanagement/emp-keymanagement.component';
 
 
 
@@ -59,6 +62,9 @@ import { CreateAttenCheckComponent } from './create-atten-check/create-atten-che
         EmpAddEditComponent,
         CreateAttenCheckComponent,
         FacultyProfileComponent,
+        EmpFirstsemComponent,
+        EmpSecondSemComponent,
+        EmpKeymanagementComponent,
     ],
     exports: [
         DashboardComponent,
