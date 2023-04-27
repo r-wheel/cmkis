@@ -207,6 +207,7 @@ openEditForm2(data: any) {
 
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.userId = parseInt(params['id']);
+      localStorage.setItem('faculty-id', this.userId.toString());
       this.api.findOne(this.userId).pipe(
         map((user:Users) => this.user = user)
       ).subscribe()

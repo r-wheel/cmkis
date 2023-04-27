@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { FirstsemService } from './service/firstsem.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CoreService } from 'src/app/core1/core.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-emp-firstsem',
@@ -10,6 +12,10 @@ import { CoreService } from 'src/app/core1/core.service';
   styleUrls: ['./emp-firstsem.component.scss']
 })
 export class EmpFirstsemComponent implements OnInit {
+
+  private sub: Subscription;
+  userId: number = null;
+
   cycles: string [] =  [
     'Monday',
     'Tuesday',
@@ -148,6 +154,7 @@ Firstsem: FormGroup;
 days = new FormControl('', [Validators.required, Validators.email]);
 sections = new FormControl('', [Validators.required, Validators.email]);
   constructor(
+    private activatedRoute: ActivatedRoute,
     private _formbuilder: FormBuilder,
     private _empService: FirstsemService,
     private _dialogRef: MatDialogRef<EmpFirstsemComponent >,
@@ -166,12 +173,19 @@ sections = new FormControl('', [Validators.required, Validators.email]);
     });
   }
 
+  private id: number = 0;
+
   ngOnInit(): void {
     this.Firstsem.patchValue(this.data);
+    this.id = parseInt(localStorage.getItem('faculty-id'));
   }
+
   onFormSubmit() {
+
+
+
     if (this.Firstsem.valid) {
-      console.log(this.data.facultyid);
+      console.log(this.userId);
       if (this.data) {
         this._empService.updatefirstSem(this.data.facultyid, this.Firstsem.value).subscribe({
             next: (val: any) => {
@@ -184,7 +198,7 @@ sections = new FormControl('', [Validators.required, Validators.email]);
           });
       }
       else {
-        this._empService.addfirstSem(this.data.facultyid, this.Firstsem.value).subscribe({
+        this._empService.addfirstSem(this.id, this.Firstsem.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Employee added successfully');
             this._dialogRef.close(true);
@@ -194,6 +208,8 @@ sections = new FormControl('', [Validators.required, Validators.email]);
           },
         });
       }
+
     }
+
   }
 }

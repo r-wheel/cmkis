@@ -10,7 +10,7 @@ export class FirstsemService {
   constructor(private _http: HttpClient) {}
 
   addfirstSem(id: number, data: any): Observable<any> {
-    return this._http.post('http://localhost/api/schedule_create-byid.php?id=' + id, data);
+    return this._http.post(`http://localhost/api/schedule_create-byid.php?id=` + id, data);
   }
 
   updatefirstSem(id: number, data: any): Observable<any> {
