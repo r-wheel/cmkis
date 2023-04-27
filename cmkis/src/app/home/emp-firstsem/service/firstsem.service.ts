@@ -17,8 +17,8 @@ export class FirstsemService {
     return this._http.put(`http://localhost:3000/firstSem/${id}`, data);
   }
 
-  getfirstSemList(): Observable<any> {
-    return this._http.get('http://localhost:3000/firstSem');
+  getfirstSemList(id: number): Observable<any> {
+    return this._http.get('http://localhost/api/schedule_view_all-byid.php?id=' + id);
   }
 
   deletefirstSem(id: number): Observable<any> {

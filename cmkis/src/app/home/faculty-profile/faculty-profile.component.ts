@@ -36,13 +36,13 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   allFacultySubscribe: any;
 
   displayedColumns: string[] = [
-    'courseCode',
+    'coursecode',
     'subject',
-    'room',
-    'day',
     'section',
-    'timeStart',
-    'timeEnd',
+    'day',
+    'time_start',
+    'time_end',
+    'room',
     'action',
   ];
 
@@ -61,12 +61,12 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
     'timeEnd2',
     'action2',
   ];
-  
+
   dataSource2!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator2!: MatPaginator;
   @ViewChild(MatSort) sort2!: MatSort;
-  
+
 
   constructor(
     private router: Router,
@@ -90,16 +90,21 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   }
 
   getfirstSemList() {
-    this.FirstsemService.getfirstSemList().subscribe({
-      next: (res) => {
-        this.dataSource = new MatTableDataSource(res);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      },
-      error: console.log,
+      this.sub = this.activatedRoute.params.subscribe(params => {
+      this.userId = parseInt(params['id']);
+      this.FirstsemService.getfirstSemList(this.userId).subscribe({
+        next: (res) => {
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+        },
+        error: console.log,
+      })
     });
   }
- 
+
+
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -207,13 +212,14 @@ openEditForm2(data: any) {
       console.log(this.user);
     });
 
+
     this.getfirstSemList();
     this.getfirstSemList2();
-    
+
 
   }
 
-  
+
 
   ngOnDestroy(){
     this.sub.unsubscribe();
