@@ -61,7 +61,7 @@ export class ApiService {
 
   // GET FACULTY BY ID HERE
   findOne(id: number): Observable<Users> {
-    return this.httpClient.get<any>(this.baseURL + 'api.php?id='+ id).pipe(
+    return this.httpClient.get<any>(this.baseURL + 'view_one.php?id='+ id).pipe(
       map((user:Users) => user)
     )
   }

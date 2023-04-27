@@ -1,32 +1,38 @@
 export class Users {
 
-  // public id?: number;
-  public first_name?: string;
-  public middle_initial?: string;
-  public last_name?: string;
+  public facultyid?: number;
+  public firstname?: string;
+  public middlename?: string;
+  public lastname?: string;
+  public connum?: string;
   public username?: string;
-  public pass?: string;
-  public role?: string;
+  public email?: string;
+  public password?: string;
+  public conpassword?: string;
 
   constructor (
-    // id: number,
-    first_name: string,
-    middle_initial: string,
-    last_name: string,
+    facultyid: number,
+    firstname: string,
+    middlename: string,
+    lastname: string,
+    connum: string,
     username: string,
-    pass: string,
-    role: string,
+    email: string,
+    password: string,
+    conpassword: string,
 
   )
 
   {
-    // this.id = id;
-    this.first_name = first_name;
-    this.middle_initial = middle_initial;
-    this.last_name = last_name;
+    this.facultyid = facultyid;
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
+    this.connum = connum;
     this.username = username;
-    this.pass = pass;
-    this.role = role;
+    this.email = email;
+    this.password = password;
+    this.conpassword = conpassword;
   }
 
 }
