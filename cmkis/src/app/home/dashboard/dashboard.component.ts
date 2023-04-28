@@ -1,101 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chart } from 'angular-highcharts';
-import * as Highcharts from 'highcharts'
+import {MatSort, Sort} from '@angular/material/sort';
+import { ApiService } from 'src/app/api.service';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+
+export interface PeriodicElement {
+  roomName: string;
+  availabilty: string;
+}
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
+
 export class DashboardComponent implements OnInit {
 
+  displayedColumns: string[] = ['RoomName', 'Availability'];
+  // dataSource = ELEMENT_DATA;
+  dataSource:any;
+
   auth: any;
-
-  highcharts = Highcharts;
-   chartOptions = {
-      chart: {
-         type: 'bar'
-      },
-      title: {
-         text: 'Historic World Population by Region'
-      },
-      subtitle : {
-         text: 'Source: Wikipedia.org'
-      },
-      legend : {
-         layout: 'vertical',
-         align: 'left',
-         verticalAlign: 'top',
-         x: 250,
-         y: 100,
-         floating: true,
-         borderWidth: 1,
-
-         backgroundColor: (
-            (Highcharts.theme && Highcharts.theme.legendBackgroundColor) ||
-              '#FFFFFF'), shadow: true
-         },
-         xAxis:{
-            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'], title: {
-            text: null
-         }
-      },
-      yAxis : {
-         min: 0, title: {
-            text: 'Population (millions)', align: 'high'
-         },
-         labels: {
-            overflow: 'justify'
-         }
-      },
-      tooltip : {
-         valueSuffix: ' millions'
-      },
-      plotOptions : {
-         bar: {
-            dataLabels: {
-               enabled: true
-            }
-         }
-      },
-      credits:{
-         enabled: false
-      },
-      series: [
-         {
-            name: 'Year 1800',
-            data: [107, 31, 635, 203, 2]
-         },
-         {
-            name: 'Year 1900',
-            data: [133, 156, 947, 408, 6]
-         },
-         {
-            name: 'Year 2008',
-            data: [973, 914, 4054, 732, 34]
-         }
-      ]
-   };
-
-
-
-
 
   lineChart = new Chart({
     chart: {
       type: 'line'
     },
     title: {
-      text: 'Linechart'
+      text: 'Faculty Attendance'
     },
     credits: {
       enabled: false
     },
     series: [
       {
-        name: 'Line 1',
+        name: 'Faculty AM',
         data: [10, 2, 3, 6 , 9, 17, 20, 10, 5, 2, 16, 2]
+      } as any,
+      {
+        name: 'Faculty PM',
+        data: [1, 10, 9, 3 , 1, 9, 10, 15, 19, 20, 8, 2]
       } as any
     ]
   });
@@ -148,7 +95,13 @@ export class DashboardComponent implements OnInit {
     ],
   });
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+              private api: ApiService,
+              private _liveAnnouncer: LiveAnnouncer) { }
+
+  @ViewChild(MatSort) sort: MatSort;
+
+
 
   ngOnInit(): void {
   //  this.auth = localStorage.getItem('token');
@@ -156,8 +109,11 @@ export class DashboardComponent implements OnInit {
   //     window.alert("You are not authorized to this page. You will be redirected to Login Page")
   //     this.router.navigate(['/cmkis']);
   //   }
-
-
+    this.api.getAllRoom().subscribe((data:any) => {
+      this.dataSource=data;
+      this.dataSource.sort = this.sort;
+    })
   }
+
 
 }

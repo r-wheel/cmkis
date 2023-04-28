@@ -47,7 +47,6 @@ import { EmpSecondSemComponent } from './emp-second-sem/emp-second-sem.component
 import { EmpKeymanagementComponent } from './emp-keymanagement/emp-keymanagement.component';
 
 
-
 @NgModule({
     declarations: [
         HomeComponent,
@@ -93,7 +92,7 @@ import { EmpKeymanagementComponent } from './emp-keymanagement/emp-keymanagement
         MatSortModule,
         MatSnackBarModule,
         MatTabsModule,
-        ChartModule 
+        ChartModule
     ]
 })
 export class HomeModule { }
