@@ -153,14 +153,17 @@ openfirstSemForm2() {
 }
 
 getfirstSemList2() {
-  this.SecondsemService.getSecondSemList().subscribe({
+  this.sub = this.activatedRoute.params.subscribe(params => {
+  this.userId = parseInt(params['id']);
+  this.SecondsemService.getSecondSemList(this.userId).subscribe({
     next: (res) => {
       this.dataSource2 = new MatTableDataSource(res);
       this.dataSource2.sort = this.sort;
       this.dataSource2.paginator = this.paginator;
     },
     error: console.log,
-  });
+  })
+});
 }
 
 applyFilter2(event: Event) {

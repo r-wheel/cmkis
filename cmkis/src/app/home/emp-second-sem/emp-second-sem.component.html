@@ -7,28 +7,28 @@
       <div class="row">
           <mat-form-field appearance="outline">
               <mat-label>Course Code</mat-label>
-              <input matInput type="text" placeholder="Ex. It102" formControlName="courseCode2">
+              <input matInput type="text" placeholder="Ex. It102" formControlName="coursecode">
           </mat-form-field>
       </div>
 
       <div class="row">
         <mat-form-field appearance="outline">
             <mat-label>Subject</mat-label>
-            <input matInput type="text" placeholder="Ex. Algorithms" formControlName="subject2">
+            <input matInput type="text" placeholder="Ex. Algorithms" formControlName="subject">
         </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline">
           <mat-label>Room No.</mat-label>
-          <input matInput type="text" placeholder="Ex. 10 " formControlName="room2">
+          <input matInput type="text" placeholder="Ex. 10 " formControlName="room">
       </mat-form-field>
   </div>
 
     <div>
         <mat-form-field appearance="fill">
           <mat-label>Day</mat-label>
-          <mat-select [formControl]="days2" required formControlName="day2">
+          <mat-select [formControl]="days2" required formControlName="day">
             <mat-option>--</mat-option>
             <mat-option *ngFor="let value of cycles2" [value]="value">
               {{value}}
@@ -41,7 +41,7 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Section</mat-label>
-        <mat-select [formControl]="sections2" required formControlName="section2">
+        <mat-select [formControl]="sections2" required formControlName="section">
           <mat-option>--First Year--</mat-option>
           <mat-option *ngFor="let value of firstYear2" [value]="value">
             {{value}}
@@ -66,14 +66,14 @@
     <div class="row">
       <mat-form-field appearance="outline">
           <mat-label>Time Start</mat-label>
-          <input matInput type="text" placeholder="Ex. 7:00 Am" formControlName="timeStart2">
+          <input matInput type="text" placeholder="Ex. 7:00 Am" formControlName="time_start">
       </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline">
         <mat-label>Time End</mat-label>
-        <input matInput type="text" placeholder="Ex. 11:00 Am" formControlName="timeEnd2">
+        <input matInput type="text" placeholder="Ex. 11:00 Am" formControlName="time_start">
     </mat-form-field>
 </div>
 

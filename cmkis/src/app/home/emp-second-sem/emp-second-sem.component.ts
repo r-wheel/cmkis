@@ -80,7 +80,7 @@ thirdYear2: string [] = [
     '3I G-2',
     '3J G-1',
     '3J G-2',
-  ] 
+  ]
 fourthYear2: string [] = [
 
     '4A G-1',
@@ -135,18 +135,22 @@ fourthYear2: string [] = [
     private _coreService: CoreService,
   ) {
     this.SecondSem = this._formbuilder.group({
-      courseCode2: '',
-      subject2: '',
-      room2: '',
-      day2: '',
-      section2: '',
-      timeStart2: '',
-      timeEnd2: '',
+      facultyid: '',
+      coursecode: '',
+      subject: '',
+      room: '',
+      day: '',
+      section: '',
+      time_start: '',
+      time_end: '',
     });
   }
 
+  private id: number = 0;
+
   ngOnInit(): void {
     this.SecondSem.patchValue(this.data);
+    this.id = parseInt(localStorage.getItem('faculty-id'));
   }
 
   onFormSubmit2() {
@@ -162,7 +166,7 @@ fourthYear2: string [] = [
             },
           });
       } else {
-        this._SecondsemService.addSecondSem(this.SecondSem.value).subscribe({
+        this._SecondsemService.addSecondSem(this.id, this.SecondSem.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Employee added successfully');
             this._dialogRef.close(true);

@@ -9,19 +9,19 @@ export class SecomdSemService {
 
   constructor(private _http: HttpClient) {}
 
-  addSecondSem(data: any): Observable<any> {
-    return this._http.post('http://localhost:3000/secondSem', data);
+  addSecondSem(id: number, data: any): Observable<any> {
+    return this._http.post(`http://localhost/api/schedule_create-byid1.php?id=` + id, data);
   }
 
   updateSecondSem(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/secondSem/${id}`, data);
+    return this._http.put(`http://localhost/api/schedule_update-byid1.php?id=` + id, data);
   }
 
-  getSecondSemList(): Observable<any> {
-    return this._http.get('http://localhost:3000/secondSem');
+  getSecondSemList(id: number): Observable<any> {
+    return this._http.get('http://localhost/api/schedule_view_all-byid1.php?id=' + id);
   }
 
   deleteSecondSem(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3000/secondSem/${id}`);
+    return this._http.get('http://localhost/api/schedule_delete-byid1.php?id='+ id);
   }
 }

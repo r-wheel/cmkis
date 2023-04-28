@@ -133,44 +133,44 @@
         <!-- fName Column -->
         <ng-container matColumnDef='coursecode'>
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Course Code </th>
-          <td mat-cell *matCellDef="let row"> {{row.courseCode2}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.coursecode}} </td>
         </ng-container>
 
         <!-- mName Column -->
         <ng-container matColumnDef='subject'>
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
-          <td mat-cell *matCellDef="let row"> {{row.subject2}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.subject}} </td>
         </ng-container>
 
          <!-- lName Column -->
          <ng-container matColumnDef='room'>
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Room No. </th>
-          <td mat-cell *matCellDef="let row"> {{row.room2}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.room}} </td>
         </ng-container>
 
            <!-- Email -->
            <ng-container matColumnDef="day">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>  Day </th>
-            <td mat-cell *matCellDef="let row"> {{row.day2}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.day}} </td>
           </ng-container>
 
 
           <!-- Username -->
           <ng-container matColumnDef="section">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Section </th>
-            <td mat-cell *matCellDef="let row"> {{row.section2}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.section}} </td>
           </ng-container>
 
                <!-- Username -->
                <ng-container matColumnDef="time_start">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Time Start </th>
-                <td mat-cell *matCellDef="let row"> {{row.timeStart2}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.time_start}} </td>
               </ng-container>
 
                    <!-- Username -->
           <ng-container matColumnDef="time_end">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Time End </th>
-            <td mat-cell *matCellDef="let row"> {{row.timeEnd2}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.time_end}} </td>
           </ng-container>
 
 
@@ -182,14 +182,12 @@
                 <mat-icon>edit</mat-icon>
               </button>
 
-              <button mat-icon-button color="warn" (click)="deletefirstSem2(row.id)">
+              <button mat-icon-button color="warn" (click)="deletefirstSem2(row.scheduleid)">
                 <mat-icon>delete</mat-icon>
               </button>
 
             </td>
           </ng-container>
-
-
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
