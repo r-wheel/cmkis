@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chart } from 'angular-highcharts';
+import * as Highcharts from 'highcharts'
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,76 @@ import { Chart } from 'angular-highcharts';
 export class DashboardComponent implements OnInit {
 
   auth: any;
+
+  highcharts = Highcharts;
+   chartOptions = {
+      chart: {
+         type: 'bar'
+      },
+      title: {
+         text: 'Historic World Population by Region'
+      },
+      subtitle : {
+         text: 'Source: Wikipedia.org'
+      },
+      legend : {
+         layout: 'vertical',
+         align: 'left',
+         verticalAlign: 'top',
+         x: 250,
+         y: 100,
+         floating: true,
+         borderWidth: 1,
+
+         backgroundColor: (
+            (Highcharts.theme && Highcharts.theme.legendBackgroundColor) ||
+              '#FFFFFF'), shadow: true
+         },
+         xAxis:{
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'], title: {
+            text: null
+         }
+      },
+      yAxis : {
+         min: 0, title: {
+            text: 'Population (millions)', align: 'high'
+         },
+         labels: {
+            overflow: 'justify'
+         }
+      },
+      tooltip : {
+         valueSuffix: ' millions'
+      },
+      plotOptions : {
+         bar: {
+            dataLabels: {
+               enabled: true
+            }
+         }
+      },
+      credits:{
+         enabled: false
+      },
+      series: [
+         {
+            name: 'Year 1800',
+            data: [107, 31, 635, 203, 2]
+         },
+         {
+            name: 'Year 1900',
+            data: [133, 156, 947, 408, 6]
+         },
+         {
+            name: 'Year 2008',
+            data: [973, 914, 4054, 732, 34]
+         }
+      ]
+   };
+
+
+
+
 
   lineChart = new Chart({
     chart: {
@@ -24,7 +95,7 @@ export class DashboardComponent implements OnInit {
     series: [
       {
         name: 'Line 1',
-        data: [10, 2, 3, 6 , 9, 17, 20, 10, 5, 2, 16]
+        data: [10, 2, 3, 6 , 9, 17, 20, 10, 5, 2, 16, 2]
       } as any
     ]
   });
@@ -54,7 +125,7 @@ export class DashboardComponent implements OnInit {
     title: {
       verticalAlign: 'middle',
       floating: true,
-      text: 'Diseases',
+      text: 'Volume of Faculty per Day',
     },
 
     legend: {
@@ -65,12 +136,13 @@ export class DashboardComponent implements OnInit {
       {
         type: 'pie',
         data: [
-          { name: 'COVID 19', y: 1, color: '#eeeeee' },
-          { name: 'HIV/AIDS', y: 2, color: '#393e46' },
-
-          { name: 'EBOLA', y: 3, color: '#00adb5' },
-          { name: 'DISPORA', y: 4, color: '#eeeeee' },
-          { name: 'DIABETES', y: 5, color: '#506ef9' },
+          { name: 'Monday', y: 7, color: '#33FF8A' },
+          { name: 'Tuesday', y: 6, color: '#393e46' },
+          { name: 'Wednesday', y: 4, color: '#00adb5' },
+          { name: 'Thursday', y: 3, color: '#FF336E' },
+          { name: 'Friday', y: 5, color: '#506ef9' },
+          { name: 'Saturday', y: 2, color: '#FF5733' },
+          { name: 'Sunday', y: 1, color: '#33E9FF' },
         ],
       },
     ],
