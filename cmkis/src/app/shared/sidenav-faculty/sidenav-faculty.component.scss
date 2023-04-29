@@ -10,15 +10,15 @@
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
-  width: 5.6em;
+  height: 100vh;
+  // width: 5.6em;
   background: #11101d;
   padding: 6px 14px;
-  z-index: 99;
+  z-index: 50;
   transition: all 0.5s ease;
 }
 .sidebar.open {
-  width: 5.6em;
+  width: 15.5em;
 }
 .sidebar .logo-details {
   height: 60px;
@@ -41,19 +41,42 @@
 .sidebar.open .logo-details .logo_name {
   opacity: 1;
 }
-.sidebar .logo-details #btn {
+// .sidebar .logo-details #btn {
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   transform: translateY(-50%);
+//   font-size: 23px;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: all 0.5s ease;
+// }
+// .sidebar.open .logo-details #btn {
+//   text-align: right;
+// }
+
+
+.close-btn {
   position: absolute;
-  top: 50%;
-  right: 0;
+  top: 1.5em;
+  left: .5em;
   transform: translateY(-50%);
   font-size: 23px;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
+  z-index: 60;
+  color: #11101d;
+
 }
-.sidebar.open .logo-details #btn {
+.open-btn {
   text-align: right;
+  z-index: 60;
+  left: 8em;
+  color: #fff;
 }
+
+
 .sidebar i {
   color: #fff;
   height: 60px;
@@ -180,7 +203,7 @@
   overflow: hidden;
 }
 .sidebar.open li.profile {
-  width: 5.6em;
+  width: 15.5em;
 }
 .sidebar li .profile-details {
   display: flex;
@@ -215,39 +238,52 @@
   line-height: 60px;
   border-radius: 0px;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .sidebar.open .profile #log_out {
   width: 100%;
   background: none;
 }
-.home-section {
-  position: relative;
-  background: #e4e9f7;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
-  z-index: 2;
-}
-.sidebar.open ~ .home-section {
-  left: 250px;
-  width: calc(100% - 250px);
-}
-.home-section .text {
-  display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px;
-}
-@media (max-width: 420px) {
-  .sidebar li .tooltip {
-    display: none;
-  }
+// .home-section {
+//   position: relative;
+//   background: #e4e9f7;
+//   min-height: 100vh;
+//   top: 0;
+//   left: 78px;
+//   width: calc(100% - 78px);
+//   transition: all 0.5s ease;
+//   z-index: 2;
+// }
+// .sidebar.open ~ .home-section {
+//   left: 250px;
+//   width: calc(100% - 250px);
+// }
+// .home-section .text {
+//   display: inline-block;
+//   color: #11101d;
+//   font-size: 25px;
+//   font-weight: 500;
+//   margin: 18px;
+// }
+// @media (max-width: 420px) {
+//   .sidebar li .tooltip {
+//     display: none;
+//   }
+// }
+
+
+// .closed-icon{
+//   display: none;
+// }
+
+
+.leave-button-color{
+  color: #fff;
+  border: none;
 }
 
 
-.closed-icon{
+.none-sidebar{
   display: none;
 }
+

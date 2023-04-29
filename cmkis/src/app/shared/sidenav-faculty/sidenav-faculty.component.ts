@@ -16,27 +16,29 @@ export class SidenavFacultyComponent implements OnInit {
   ngOnInit(): void {
     let sidebar = document.querySelector('.sidebar');
     let closeBtn = document.querySelector('#btn');
-    let hideIcon = document.querySelector('.fa-brands');
 
     closeBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
+      sidebar.classList.toggle('none-sidebar');
       menuBtnChange();
     });
 
     function menuBtnChange() {
-      if (sidebar.classList.contains('open')) {
-        closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
-        hideIcon.classList.remove('closed-icon');
-      } else {
+      if (sidebar.classList.contains('none-sidebar')) {
         closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
-        hideIcon.classList.add("closed-icon");
-      }
-    }
-  }
+        closeBtn.classList.replace('open-btn', 'close-btn')
+        } 
 
-  logOut(){
-    this.api.deleteToken();
-    this.router.navigate(['./cmkis']);
-  }
+       else {
+        closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+        closeBtn.classList.add('open-btn');
+       }
+    }
+
+ }
+
+ logOut(){
+   this.api.deleteToken();
+   this.router.navigate(['./cmkis']);
+ }
 
 }

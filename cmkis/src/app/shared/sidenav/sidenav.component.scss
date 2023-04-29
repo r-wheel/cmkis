@@ -263,7 +263,7 @@
   width: 78px;
   background: #11101D;
   padding: 6px 14px;
-  z-index: 99;
+  z-index: 50;
   transition: all 0.5s ease;
 }
 .sidebar.open{
@@ -290,21 +290,42 @@
 .sidebar.open .logo-details .logo_name{
   opacity: 1;
 }
-.sidebar .logo-details #btn{
+// .sidebar .logo-details #btn{
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   transform: translateY(-50%);
+//   font-size: 22px;
+//   transition: all 0.4s ease;
+//   font-size: 23px;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: all 0.5s ease;
+// }
+// .sidebar.open .logo-details #btn{
+//   text-align: right;
+// }
+
+.close-btn {
   position: absolute;
-  top: 50%;
-  right: 0;
+  top: 1.5em;
+  left: .5em;
   transform: translateY(-50%);
-  font-size: 22px;
-  transition: all 0.4s ease;
   font-size: 23px;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
+  z-index: 60;
+  color: #11101d;
+
 }
-.sidebar.open .logo-details #btn{
+.open-btn {
   text-align: right;
+  z-index: 60;
+  left: 10.3em;
+  color: #fff;
 }
+
 .sidebar i{
   color: #fff;
   height: 60px;
@@ -466,6 +487,7 @@
   line-height: 60px;
   border-radius: 0px;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .sidebar.open .profile #log_out{
   width: 50px;
@@ -506,9 +528,15 @@
 
 
 //Dinagdag ni nicho april 28, 8pm
+
 .leave-button-color{
-  color: #FFF;
+  color: #fff;
   border: none;
+}
+
+
+.none-sidebar{
+  display: none;
 }
 
 

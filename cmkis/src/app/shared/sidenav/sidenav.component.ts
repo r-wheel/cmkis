@@ -13,21 +13,26 @@ export class SidenavComponent{
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    // let sidebar = document.querySelector('.sidebar');
-    // let closeBtn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+    let closeBtn = document.querySelector('#btn');
 
-    // closeBtn.addEventListener('click', () => {
-    //   sidebar.classList.toggle('open');
-    //   menuBtnChange();
-    // });
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('none-sidebar');
+      menuBtnChange();
+    });
 
-    // function menuBtnChange() {
-    //   if (sidebar.classList.contains('open')) {
-    //     closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
-    //   } else {
-    //     closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
-    //   }
-    // }
+    function menuBtnChange() {
+      if (sidebar.classList.contains('none-sidebar')) {
+        closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+        closeBtn.classList.replace('open-btn', 'close-btn')
+        } 
+
+       else {
+        closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+        closeBtn.classList.add('open-btn');
+       }
+    }
+
   }
 
   logOut(){
