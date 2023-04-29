@@ -10,18 +10,11 @@ h1{
 .container{
   display: flex;
   width: 100%;
-  nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20%;
-    // border-right: solid 1px #a5a5a5;
-    height: 100%;
-  }
-  main{
-    margin-left: 75px;
-    padding: 3em 1em;
-    width: 100%;
-  }
+  
 
 }
+main{
+  margin-left: 7em;
+}
+
+

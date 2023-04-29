@@ -1,47 +1,41 @@
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<div class="sidebar open">
 
-  <div class="logo-details">
-    <i class="fa-brands fa-keycdn"></i>
-    <!-- <div class="logo_name">CMKIS</div> -->
-    <!-- <i class="bx bx-menu" id="btn"></i> -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<body>
+  <i class='bx bx-menu close-btn' id="btn" ></i>
+  <div class="sidebar open none-sidebar">
+    <div class="logo-details">
+        <i class="fa-brands fa-keycdn"></i>
+        <div class="logo_name">CMKIS</div>
+        <!-- <i class='bx bx-menu' id="btn" ></i> -->
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/home-attendance-checker/check-attendance" routerLinkActive="active-link">
+          <i class='fa-solid fa-calendar-days'></i>
+          <span class="links_name">Check Attendance</span>
+        </a>
+         <span class="tooltip">Check Attendance</span>
+      </li>
+      <li class="mobile-li">
+       <a routerLink="/home-attendance-checker/key-inventory-attendanceChecker">
+         <i class='fa-solid fa-key' ></i>
+         <span class="links_name">Key Inventory</span>
+       </a>
+       <span class="tooltip">Key Inventory</span>
+      </li>
+
+     <li class="profile">
+         <button class='bx bx-log-out leave-button-color' id="log_out" (click)="logOut()"></button>
+     </li>
+     
+    </ul>
   </div>
-  <ul class="nav-list">
-    <!-- <li>
-        <i class='bx bx-search' ></i>
-       <input type="text" placeholder="Search...">
-       <span class="tooltip">Search</span>
-    </li> -->
-    <li>
-      <a routerLink="/home-attendance-checker/check-attendance" routerLinkActive="active-link">
-        <i class='bx bx-grid-alt'></i>
-        <!-- <span class="links_name">Check Attendance</span> -->
-      </a>
-       <span class="tooltip">Check Attendance</span>
-    </li>
-    <li>
-     <a routerLink="/home-attendance-checker/key-inventory-attendanceChecker">
-       <i class='fa-solid fa-key' ></i>
-       <!-- <span class="links_name">Key Inventory</span> -->
-     </a>
-     <span class="tooltip">Key Inventory</span>
-   </li>
-   <br>
-    <li class="profile">
-      <!-- <div class="profile-details">
-        <img src="assets/profile.png" alt="profileImg">
-        <div class="name_job">
-          <div class="name">Niko De Lara</div>
-          <div class="job">Admin</div>
-        </div>
-      </div> -->
-      <button class='bx bx-log-out' id="log_out" (click)="logOut()"></button>
-    </li>
-  </ul>
-</div>
-<!-- <section class="home-section">
-    <div class="text" >Semester Management</div>
-    <hr>
-    <div class="text" style="font-size: 19px;" >Academic Year:</div>
-</section> -->
+  <!-- <section class="home-section">
+      <div class="text" >Semester Management</div>
+      <hr>
+      <div class="text" style="font-size: 19px;" >Academic Year:</div>
+  </section> -->
+

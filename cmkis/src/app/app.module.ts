@@ -18,6 +18,9 @@ import {MatCardModule} from '@angular/material/card';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import {MatCardModule} from '@angular/material/card';
     HomeAtModule,
     HomeFacultyModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
