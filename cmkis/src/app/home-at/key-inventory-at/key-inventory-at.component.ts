@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-key-inventory-at',
