@@ -13,8 +13,26 @@ h1{
   
 
 }
-main{
-  margin-left: 7em;
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  // border-right: solid 1px #a5a5a5;
+  height: 100vh;
+  background-color: aqua;
 }
 
+
+
+main{
+  //margin-left: 7em;
+  padding: 3em 1em;
+  width: 100%;
+   z-index: -1;
+  //display: flex;
+  //justify-content: center;
+  //background-color: red;
+}
 

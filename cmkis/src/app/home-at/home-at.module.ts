@@ -11,6 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 
+
+
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+
+
+
 @NgModule({
   declarations: [
     HomeATComponent,
@@ -24,7 +31,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatSelectModule
   ]
 })
 export class HomeAtModule { }
