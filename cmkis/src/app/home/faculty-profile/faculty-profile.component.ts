@@ -29,7 +29,7 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
   user: Users = null;
 
   public displayColumn: string [] = ['id', 'fname', 'lname', 'email', 'pass'];
-  public displayColumnAttendance: string [] = ['id', 'fname', 'lname'];
+  public displayColumnAttendance: string [] = ['date', 'room', 'status'];
 
 
   allFaculty: any = [];
@@ -66,6 +66,18 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
 
   @ViewChild(MatPaginator) paginator2!: MatPaginator;
   @ViewChild(MatSort) sort2!: MatSort;
+
+
+  @ViewChild(MatPaginator) paginator3!: MatPaginator;
+  @ViewChild(MatSort) sort3!: MatSort;
+
+  displayColumns3: string[] = [
+    'date',
+    'room',
+    'status',
+  ];
+
+  dataSource3!: MatTableDataSource<any>;
 
 
   constructor(
@@ -201,6 +213,8 @@ openEditForm2(data: any) {
 
 
 
+
+
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
@@ -221,6 +235,23 @@ openEditForm2(data: any) {
     this.getfirstSemList2();
 
 
+    this.loadAttendance();
+
+
+  }
+
+  loadAttendance(){
+    this.sub = this.activatedRoute.params.subscribe(params => {
+      this.userId = parseInt(params['id']);
+      this.FirstsemService.getAttendance(this.userId).subscribe({
+        next: (res) => {
+          this.dataSource3 = new MatTableDataSource(res);
+          this.dataSource3.sort = this.sort3;
+          this.dataSource3.paginator = this.paginator3;
+        },
+        error: console.log,
+      })
+    });
   }
 
 

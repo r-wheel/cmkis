@@ -4,6 +4,8 @@ import { HomeFacultyComponent } from './home-faculty.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -15,7 +17,8 @@ import { ViewAttendanceComponent } from './view-attendance/view-attendance.compo
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatTableModule
   ]
 })
 export class HomeFacultyModule { }

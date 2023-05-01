@@ -16,6 +16,10 @@ export class ApiService {
 
   constructor(private httpClient : HttpClient) { }
 
+  getAttendance(id: number): Observable<any> {
+    return this.httpClient.get('http://localhost/api/getAllAttendance.php?id=' + id);
+  }
+
   // GET ALL SCHEDULE HERE
   getAllSched(){
     return this.httpClient.get(this.baseURL + 'schedule_view.php').pipe(map(data => data));

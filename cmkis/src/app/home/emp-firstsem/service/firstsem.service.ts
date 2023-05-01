@@ -24,4 +24,9 @@ export class FirstsemService {
   deletefirstSem(id: number): Observable<any> {
     return this._http.get('http://localhost/api/schedule_delete-byid.php?id='+ id);
   }
+
+  getAttendance(id: number): Observable<any> {
+    return this._http.get('http://localhost/api/getAllAttendance.php?id=' + id);
+  }
+
 }
