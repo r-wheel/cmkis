@@ -10,29 +10,30 @@ h1{
 .container{
   display: flex;
   width: 100%;
+
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    // border-right: solid 1px #a5a5a5;
+    height: 100vh;
+  }
+  
+  
+  
+  main{
+    //margin-left: 7em;
+    padding: 3em 1em;
+    width: 100%;
+     //z-index: -1;
+    //display: flex;
+    //justify-content: center;
+    //background-color: red;
+  }
   
 
 }
 
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  // border-right: solid 1px #a5a5a5;
-  height: 100vh;
-  background-color: aqua;
-}
 
-
-
-main{
-  //margin-left: 7em;
-  padding: 3em 1em;
-  width: 100%;
-   z-index: -1;
-  //display: flex;
-  //justify-content: center;
-  //background-color: red;
-}
 

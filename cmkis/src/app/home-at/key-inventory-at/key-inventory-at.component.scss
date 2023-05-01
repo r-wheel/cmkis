@@ -5,18 +5,15 @@
 
 .container{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  //border: 3px solid #73AD21;
+  // flex-wrap: wrap;
+  // justify-content: center;
   width: 100%;
-  //background-color: orange;
 
 }
 
 h1{
   display: flex;
-  justify-content: center;
-  //background-color: red;
+  // justify-content: center;
   margin-bottom: 0px;
 }
 
@@ -26,25 +23,25 @@ h1{
 // susi contents centered
 
 
-mat-card-header{
-  display: flex;
-  // flex-direction: column;
-  justify-content: center;
-}
+// mat-card-header{
+//   display: flex;
+//   // flex-direction: column;
+//   justify-content: center;
+// }
 
-mat-card-title{
-  display: flex;
-  justify-content: center;
-}
+// mat-card-title{
+//   display: flex;
+//   justify-content: center;
+// }
 
-mat-card-subtitle{
-  display: flex;
-  justify-content: center;
-}
+// mat-card-subtitle{
+//   display: flex;
+//   justify-content: center;
+// }
 
-mat-card-actions{
-  display: flex;
-  justify-content: center;
-}
+// mat-card-actions{
+//   display: flex;
+//   justify-content: center;
+// }
 
 
