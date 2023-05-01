@@ -83,6 +83,7 @@ export class ApiService {
     return this.httpClient.post<any>(this.baseURL + '/loginFaculty.php', {username,pass})
     .pipe(map(Users=>{
       this.setToken(Users.role);
+      localStorage.setItem('id',Users.facultyid)
       this.getLoggedInName.emit(true);
       return Users;
     }));

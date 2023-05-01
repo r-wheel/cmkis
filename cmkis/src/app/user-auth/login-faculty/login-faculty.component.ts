@@ -35,7 +35,7 @@ export class LoginFacultyComponent implements OnInit {
         console.log(data);
         if(data.message=='success')
         //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-        this.router.navigate(['./home-faculty']);
+        this.router.navigate(['./home-faculty/view-attendance']);
       },
       error => {
         alert("User name or password is incorrect")
