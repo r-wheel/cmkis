@@ -33,3 +33,28 @@ section {
   justify-content: center;
   width: 120px;
 }
+
+
+
+
+
+
+@media all and (max-width: 700px){
+  table{
+    width: 100%*2.5;
+  }
+
+  .date{
+    font-size: .8em;
+  }
+  
+}
+
+@media all and (max-width: 500px){
+  table{
+    width: 100%*3;
+  }
+
+  
+  
+}
