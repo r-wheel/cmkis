@@ -7,6 +7,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { CoreService } from 'src/app/core1/core.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-faculty',
@@ -36,7 +37,7 @@ export class FacultyComponent implements OnInit {
   constructor(
     private _dailog: MatDialog ,
     private _facultyService:FacultyyService,
-    private _coreService: CoreService,private router: Router
+    private _coreService: CoreService,private router: Router,private location: Location
     ){}
 
   openAddEditEmpForm(){
@@ -102,9 +103,10 @@ export class FacultyComponent implements OnInit {
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
+
     this.getFacultyList()
   }
 

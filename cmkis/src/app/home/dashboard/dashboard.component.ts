@@ -4,6 +4,7 @@ import { Chart } from 'angular-highcharts';
 import {MatSort, Sort} from '@angular/material/sort';
 import { ApiService } from 'src/app/api.service';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { Location } from '@angular/common';
 
 export interface PeriodicElement {
   roomName: string;
@@ -97,18 +98,21 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router:Router,
               private api: ApiService,
-              private _liveAnnouncer: LiveAnnouncer) { }
+              private _liveAnnouncer: LiveAnnouncer,
+              private location: Location) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
 
 
   ngOnInit(): void {
-  //  this.auth = localStorage.getItem('token');
-  //   if (this.auth !== "Admin") {
-  //     window.alert("You are not authorized to this page. You will be redirected to Login Page")
-  //     this.router.navigate(['/cmkis']);
-  //   }
+    // this.auth = localStorage.getItem('token');
+    // if (this.auth !== "Admin") {
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
+    // }
+
+
     this.api.getAllRoom().subscribe((data:any) => {
       this.dataSource=data;
       this.dataSource.sort = this.sort;

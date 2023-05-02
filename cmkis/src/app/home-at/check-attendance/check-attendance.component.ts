@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map, timer } from 'rxjs';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -33,13 +34,13 @@ export class CheckAttendanceComponent implements OnInit {
 
   auth:any;
 
-  constructor(private router: Router, private httpClient: HttpClient) { }
+  constructor(private router: Router, private httpClient: HttpClient, private location: Location) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "AttendanceChecker") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
 

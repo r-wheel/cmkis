@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map,first } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-key-inventory',
@@ -17,13 +18,14 @@ export class KeyInventoryComponent implements OnInit {
   isAvailable:boolean;
 
   constructor(private router: Router,
-              private api: ApiService) { }
+              private api: ApiService,
+              private location: Location) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
 

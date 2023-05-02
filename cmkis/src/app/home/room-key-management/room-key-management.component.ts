@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { KeyManagementService } from '../emp-keymanagement/service/key-management.service';
 import { CoreService } from 'src/app/core1/core.service';
 import { EmpKeymanagementComponent } from '../emp-keymanagement/emp-keymanagement.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-room-key-management',
@@ -33,6 +34,7 @@ export class RoomKeyManagementComponent implements OnInit {
     private _KeymanagentService:KeyManagementService,
     private _coreServices:CoreService,
     private router: Router,
+    private location: Location
     )  { }
 
     createKeymanagementForm(){
@@ -97,8 +99,8 @@ export class RoomKeyManagementComponent implements OnInit {
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
-    //   window.alert("You are not authorized to this page, You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
     this.getKeymanagementList()

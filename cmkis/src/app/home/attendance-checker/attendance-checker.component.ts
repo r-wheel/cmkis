@@ -8,6 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from 'src/app/core1/core.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-attendance-checker',
@@ -38,8 +39,8 @@ export class AttendanceCheckerComponent implements OnInit {
     private _dIaLoG:MatDialog,
     private _attendanceService:AttendanceService,
     private _coreServices:CoreService,
-    private router: Router
-
+    private router: Router,
+    private location: Location
     )  { }
 
 
@@ -104,8 +105,8 @@ export class AttendanceCheckerComponent implements OnInit {
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
     this.getAttendanceList()

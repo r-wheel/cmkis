@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ApiService } from '../api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home-faculty',
@@ -15,13 +16,14 @@ export class HomeFacultyComponent implements OnInit {
   auth:any;
 
   constructor(private router: Router,
-              private api: ApiService) { }
+              private api: ApiService,
+              private location: Location) { }
 
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Faculty") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
   }

@@ -14,6 +14,7 @@ import { CoreService } from 'src/app/core1/core.service';
 import { EmpFirstsemComponent } from '../emp-firstsem/emp-firstsem.component';
 import { EmpSecondSemComponent } from '../emp-second-sem/emp-second-sem.component';
 import { SecomdSemService } from '../emp-second-sem/service/secomd-sem.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-faculty-profile',
@@ -88,6 +89,7 @@ export class FacultyProfileComponent implements OnInit, OnDestroy {
     private FirstsemService: FirstsemService,
     private SecondsemService: SecomdSemService ,
     private coreService: CoreService,
+    private location: Location
   ) { }
 
   openfirstSemForm() {
@@ -218,8 +220,8 @@ openEditForm2(data: any) {
   ngOnInit(): void {
     // this.auth = localStorage.getItem('token');
     // if (this.auth !== "Admin") {
-    //   window.alert("You are not authorized to this page. You will be redirected to Login Page")
-    //   this.router.navigate(['/cmkis']);
+    //   window.alert("You are not authorized to this page")
+    //   this.location.back();
     // }
 
     this.sub = this.activatedRoute.params.subscribe(params => {
