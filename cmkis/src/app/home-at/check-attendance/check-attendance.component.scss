@@ -35,6 +35,45 @@ section {
 }
 
 
+th{
+  background-color: #11101d;
+  color: white;
+  
+}
+
+.time-box{
+  display: flex; 
+  justify-content: center;
+ background-color: #11101d;
+ color: azure;
+ border-radius: 2em; 
+ margin: 3em; 
+ margin-top: 0;
+ height: 2em; 
+ width: 15em; 
+}
+
+.box-time-box{
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+mat-tab-group{
+  // background: #b4bbe5;
+  border-radius: 1em;
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+               15px  15px 15px rgba(0,0,0,0.1),
+               inset -5px -5px 5px rgba(255,255,255,0.2),
+               inset  5px  5px 5px  rgba(0,0,0,0.1);
+
+}
+
+ng-container:nth-child(even){
+  background-color: #939393;
+}
+
+
 
 
 

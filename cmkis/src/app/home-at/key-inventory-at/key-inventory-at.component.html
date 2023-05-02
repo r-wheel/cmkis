@@ -1,4 +1,7 @@
-<h1>Key Inventory</h1>
+
+
+<div class="box-shadow" >
+  <h1 style="background-color: #11101d; color: white; padding: .5em; border-radius: .8em;">Key Inventory</h1>
 <div class="container">
   <mat-card class="example-card" *ngFor="let room of roomlist">
     <mat-card-header>
@@ -11,4 +14,6 @@
       <button mat-raised-button color="primary" *ngIf="(room.availabilty === 'Not Available');">RETURN</button>
     </mat-card-actions>
   </mat-card>
+</div>
+
 </div>
