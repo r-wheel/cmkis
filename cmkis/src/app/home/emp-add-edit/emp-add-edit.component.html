@@ -45,7 +45,7 @@
                 <div class="example-container">
                   <mat-form-field appearance="outline" class="email" >
                   <mat-label>Enter your email</mat-label>
-                  <input matInput placeholder="pat@example.com" formControlName = "email" required >
+                  <input matInput placeholder="pat@example.com" formControlName = "email" required ="email" >
                   <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                   </mat-form-field>
                 </div>
@@ -70,7 +70,7 @@
                   <div class="example-container" >
                     <mat-form-field appearance="outline" class="password" >
                       <mat-label>Enter your confirmation password</mat-label>
-                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="conpassword">
+                      <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="conpassword">
                       <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
                         <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
                       </button>

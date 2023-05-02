@@ -1,7 +1,7 @@
 <style>
   h1,h3 {text-align: center;}
-  p {text-align: center;}
-  div {text-align: center;}
+
+
   table {width: 100%;}
   th.mat-sort-header-sorted {color: black;}
 
@@ -26,10 +26,12 @@
 
     <!-- SCHEDULE TABLE HERE -->
     <div class="main-body">
+      <div class="filter">
       <mat-form-field>
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
       </mat-form-field>
+      </div>
 
       <div class="table-container">
         <table mat-table [dataSource]="dataSource" matSort>
@@ -121,11 +123,13 @@
   <mat-tab label="2nd Sem">
 
   <!-- 2ND TAB HERE -->
+  <div class="filter">
   <div class="main-body">
     <mat-form-field>
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
     </mat-form-field>
+  </div>
 
     <div class="table-container">
       <table mat-table [dataSource]="dataSource2" matSort>
