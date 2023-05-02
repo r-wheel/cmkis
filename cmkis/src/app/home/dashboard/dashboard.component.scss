@@ -5,14 +5,21 @@
 
 .pie{
   flex: 1;
-  box-shadow: 10px, 10px, 5px, #aaaaaa;
+  //box-shadow: 10px, 10px, 5px, #aaaaaa;
   margin-right: 20px;
+  border-radius: 3em;
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+              15px  15px  15px   rgba(0,0,0,0.1);
 }
 
 .line{
   flex: 1;
-  box-shadow: 10px, 10px, 5px, #aaaaaa;
+  border-radius: 3em;
+  //box-shadow: 10px, 10px, 5px, #aaaaaa;
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+              15px  15px  15px   rgba(0,0,0,0.1);
 }
+
 
 table {
   width: 100%;
@@ -20,6 +27,11 @@ table {
 
 th.mat-sort-header-sorted {
   color: black;
+}
+
+th{
+  background-color: #11101D;
+  color: white;
 }
 
 

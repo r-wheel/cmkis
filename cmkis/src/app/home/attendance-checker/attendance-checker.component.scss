@@ -11,8 +11,25 @@ table {
   width: 100%;
 }
 
+mat-toolbar{
+  background-color: #11101D; 
+  color: white; 
+  border-radius: .8em;
+  
+}
+
 td, th {
   width: 5%;
+}
+
+th{
+  background-color: #11101D;
+  color: white;
+}
+
+.table-container{
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+              15px  15px  15px   rgba(0,0,0,0.1);
 }
 
 .main-body{

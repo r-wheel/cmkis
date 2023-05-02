@@ -20,4 +20,40 @@ h1{
   margin-bottom: 0px;
 }
 
+mat-card-header{
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+}
+
+mat-card-title{
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-subtitle{
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-actions{
+  display: flex;
+  justify-content: center;
+}
+
+
+.box-shadow{
+  padding: 1em; 
+  margin: 2em; 
+  margin-top: 0; 
+  margin-bottom: 2em;
+  border-radius: 4em;
+  border-radius: 1em;
+  background-color: #35306c;
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+               15px  15px 15px rgba(0,0,0,0.1),
+               inset -5px -5px 5px rgba(255,255,255,0.2),
+               inset  5px  5px 5px  rgba(0,0,0,0.1);
+}
+
 

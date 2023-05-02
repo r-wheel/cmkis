@@ -14,7 +14,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. key room" #input>
   </mat-form-field>
 
-  <div class="table-container">
+  <div class="table-container" style="display: flex; justify-content: center; flex-direction: column;">
     <table mat-table [dataSource]="dataSource" matSort>
 
 
