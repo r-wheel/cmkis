@@ -27,10 +27,11 @@
     <div class="container">
            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" action="">
             <div class="top">
-                <span><a href="#" class="forgot">Dont have an account?</a></span>
-                <header>Login</header>
+                <span><a href="#" class="forgot"></a></span>
+                <header>Admin Login</header>
             </div>
-
+            <br>
+            
             <div class="input-field">
                 <input type="username" name="username" formControlName="username" autocomplete="off" class="input" placeholder="Username" id="">
                 <i class='bx bx-user' ></i>
@@ -47,11 +48,11 @@
 
             <div class="two-col">
                 <div class="one">
-                   <input type="checkbox" name="" id="check">
-                   <label for="check"> Remember Me</label>
+                   <!-- <input type="checkbox" name="" id="check"> -->
+                   <!-- <label for="check"> Remember Me</label> -->
                 </div>
                 <div class="two">
-                    <label><a href="#">Forgot password?</a></label>
+                    <!-- <label><a href="#">Forgot password?</a></label> -->
                 </div>
             </div>
         </form>
