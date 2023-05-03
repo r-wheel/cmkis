@@ -17,6 +17,8 @@ export class ViewAttendanceComponent implements OnInit {
 
   auth:any;
 
+  apiObjects: any[] = [];
+
 
   constructor(private router: Router,
               private api: ApiService,
@@ -32,7 +34,14 @@ export class ViewAttendanceComponent implements OnInit {
     this.userId = parseInt(localStorage.getItem("id"));
       this.api.getAttendance(this.userId).subscribe((data:any) => {
         this.dataSource=data;
-      })
+      });
+
+
+      this.api.getAttendance(this.userId).subscribe(response => {
+        this.apiObjects = response;
+      });
+
+    
 
   }
 
