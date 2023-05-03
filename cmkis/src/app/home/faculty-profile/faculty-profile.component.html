@@ -114,8 +114,11 @@
 
     <!-- SCHEDULE TABLE END -->
 
-    <button mat-raised-button color="primary" (click)="openfirstSemForm()">Add Schedule</button>
+    <div style="display: flex; justify-content: center;">
+      <button mat-raised-button color="primary" (click)="openfirstSemForm()" class="add-schedule">Add Schedule</button>
+    </div>
 
+    
 
   </mat-tab>
   <!-- 1ST TAB END -->
@@ -207,7 +210,10 @@
 
   </div>
   <!-- 2ND TAB END -->
-  <button mat-raised-button color="primary" (click)="openfirstSemForm2()">Add Schedule</button>
+  <div style="display: flex; justify-content: center;">
+    <button mat-raised-button color="primary" (click)="openfirstSemForm2()" class="add-schedule">Add Schedule</button>
+  </div>
+  
 </mat-tab>
 
 </mat-tab-group>

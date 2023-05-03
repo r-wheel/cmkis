@@ -6,6 +6,17 @@ table {
   width: 100%;
 }
 
+.table-container{
+  border-radius: 3em;
+  //box-shadow: 10px, 10px, 5px, #aaaaaa;
+  box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+              15px  15px  15px   rgba(0,0,0,0.1);
+}
+
+.add-schedule{
+  margin: 2em;
+}
+
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
@@ -14,6 +25,12 @@ table {
 td, th {
   width: 5%;
 }
+
+th{
+  background-color: #11101D;
+  color: white;
+}
+
 
 .main-body{
   padding-top: 20px;
